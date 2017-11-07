@@ -6,13 +6,14 @@ import { KidmergenciesService }
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
+  public users;
 
-  constructor() { }
+  constructor(pivate userService: UserService) { }
 
   ngOnInit() {
+    this.users = this.userService.getUsers();
   }
 
 }
