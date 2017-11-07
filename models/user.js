@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt-nodejs');
+// const bcrypt = require('bcrypt-nodejs');
 
 const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
