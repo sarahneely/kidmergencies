@@ -1,10 +1,11 @@
 const express = require('express');
+const router = express.Router();
 const app = express();
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const bodyParser = require('body-parser');
 // const path = require('path');
-// const users = require('./routes/users')(router);
+const users = require('./routes/users')(router);
 // const cors = require('cors');
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -30,54 +31,19 @@ mongoose.connect('mongodb://charliebrown:snoopy@ds143245.mlab.com:43245/kidmerge
 // app.use(express.static(__dirname + '/dist'));
 
 // API ROUTING
-const router = express.Router();
 // middleware to use for all requests
 router.use(function(req, res, next) {
   console.log('using router');
   next();
 });
-
 // Test route
-router.get('/', function(req, res) {
+router.get('/', (req, res) => {
   res.json({message: 'api works!'});
 });
-
-// ROUTES
-router.post('/users', (req, res) => {
-  const user = new User({
-    email: req.body.email,
-    password: req.body.password,
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-  });
-  user.save((err) => {
-    if (err) {
-      res.json({success: false, message: err.errmsg});
-    } else {
-      res.json({success: true, message: 'User saved!'});
-    }
-  });
-});
-
-router.get('/users', (req, res) => {
-  User.find({}, (err, users) => {
-    if (err) {
-      res.json({success: false, message: err});
-    } else {
-      if (!users) {
-        res.json({success: false, message: 'No users found.'});
-      } else {
-        res.json(users);
-      }
-    }
-  })
-});
-
+// Prefix routes with /api
 app.use('/api', router);
-
-
-app.post("api/users/new", (req, res) => {
-  });
+// Get routes from files in app/routes
+app.use('/users', users);
 
 // START THE SERVER
 app.listen(port, () => {
