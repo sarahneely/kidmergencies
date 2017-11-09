@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 // const bcrypt = require('bcrypt-nodejs');
 
@@ -8,13 +7,9 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  // address: [{
-  //   streetAddress: { type: String, required: true },
-  //   aptNumber: { type: String, required: false },
-  //   city: { type: String, required: true },
-  //   state: { type: String, required: true },
-  //   zip: { type: String, required: true }
-  // }],
+
+  // TODO: Break out Household as it's own model, and Household members as a separate model. Reg form has two parts - part one user info, part 2 household info.
+
   // contacts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Contact' }]
   // userSchema.virtual('fullAddress').get(function () {
   // return this.address.streetAddress + ', ' + this.address.city + ', ' + this.address.state + ' ' + this.address.zip;

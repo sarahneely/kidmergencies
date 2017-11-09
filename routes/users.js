@@ -1,9 +1,11 @@
 const User = require('../models/user');
+const jwt = require('jsonwebtoken');
+const config = require('../config');
 
 // ROUTES
 module.exports = (router) => {
-// ADD A NEW USER
-  router.post('/users', (req, res) => {
+// REGISTER NEW USER
+  router.post('/register', (req, res) => {
     const user = new User({
       email: req.body.email,
       password: req.body.password,
@@ -15,6 +17,26 @@ module.exports = (router) => {
         res.json({success: false, message: err.errmsg});
       } else {
         res.json({success: true, message: 'User saved!'});
+      }
+    });
+  });
+// LOG IN
+  router.post('/login', (req, res) => {
+    User.findOne({email: req.body.email}, (err, user) => {
+      if (user) {
+        if (user.password != req.body.password) {
+          res.json({success: false, message: 'Invalid password.'});
+        } else {
+          const token = jwt.sign({ userId: user._id, firstName: user.firstName }, config.secret, { expiresIn: '24h' });
+          console.log(token);
+          res.json({success: true, message: 'Logged in!'});
+        }
+      } else {
+        if (!user) {
+          res.json({ success: false, message: 'User not found.' });
+        } else {
+          res.json({ success: false, message: err });
+        }
       }
     });
   });
@@ -31,6 +53,23 @@ module.exports = (router) => {
         }
       }
     })
+  });
+  // Middleware. Routes that use middleware will come after this function.
+  router.use((req, res, next) => {
+    const token = req.headers['authorization'];
+    if (!token) {
+      return res.status(403).send({ success: false, message: 'No token provided.' });
+    } else {
+      jwt.verify(token, config.secret, (err, decoded) => {
+        if (err) {
+          res.json({ success: false, message: 'Token invalid: ' + err });
+        } else {
+          req.decoded = decoded;
+          // console.log(req.decoded.firstName);
+          next();
+        }
+      });
+    }
   });
 // GET ONE USER
   router.get('/users/:id', (req, res) => {

@@ -3,10 +3,14 @@ mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 
 const householdSchema = new Schema({
-  headOfHousehold: [{
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    relationship: { type: String, required: true }
+  user_id: { type: String, required: true },
+  phone: { type: String, required: true },
+  address: [{
+    streetAddress: { type: String, required: true },
+    aptNumber: { type: String, required: false },
+    city: { type: String, required: true },
+    state: { type: String, required: true },
+    zip: { type: String, required: true }
   }],
 });
 
