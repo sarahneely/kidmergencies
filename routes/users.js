@@ -1,44 +1,88 @@
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const config = require('../config');
+const bcrypt = require('bcrypt');
 
 // ROUTES
 module.exports = (router) => {
 // REGISTER NEW USER
   router.post('/register', (req, res) => {
-    const user = new User({
-      email: req.body.email,
-      password: req.body.password,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-    });
-    user.save((err) => {
-      if (err) {
-        res.json({success: false, message: err.errmsg});
+    if (!req.body.email) {
+      res.json({ success: false, message: 'Email is required.' });
+    } else {
+      if (!req.body.firstName) {
+        res.json({ success: false, message: 'First name is required.' });
       } else {
-        res.json({success: true, message: 'User saved!'});
+        if (!req.body.lastName) {
+          res.json({ success: false, message: 'Last name is required.' }); 
+        } else {
+          if (!req.body.password) {
+            res.json({ success: false, message: 'Password is required.' });
+          } else {
+            if (req.body.password != req.body.confirmPassword) {
+              res.json({ success: false, message: 'Passwords do not match.' });
+            } else {
+              const user = new User({
+                email: req.body.email.toLowerCase(),
+                password: req.body.password,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+              });
+              user.save((err) => {
+                if (err) {
+                  if (err.code === 11000) {
+                    res.json({ success: false, message: 'Email already exists.' });
+                  } else {
+                    if (err.errors) {
+                      if (err.errors.email) {
+                        res.json({ success: false, message: err.errors.email.message });
+                      } else {
+                        if (err.errors.password) {
+                          res.json({ success: false, message: err.errors.password.message });
+                        } else {
+                          res.json({success: false, message: err});
+                        }
+                      }
+                    }
+                  }
+                } else {
+                  res.json({success: true, message: 'User saved!'});
+                }
+              });
+
+            }
+          }
+        }
       }
-    });
+    }
   });
 // LOG IN
   router.post('/login', (req, res) => {
-    User.findOne({email: req.body.email}, (err, user) => {
-      if (user) {
-        if (user.password != req.body.password) {
-          res.json({success: false, message: 'Invalid password.'});
-        } else {
-          const token = jwt.sign({ userId: user._id, firstName: user.firstName }, config.secret, { expiresIn: '24h' });
-          console.log(token);
-          res.json({success: true, message: 'Logged in!'});
-        }
+    if (!req.body.email) {
+      res.json({ success: false, message: 'You did not enter an email.' });
+    } else {
+      if (!req.body.password) {
+        res.json({ success: false, message: 'You did not enter a password.' });
       } else {
-        if (!user) {
-          res.json({ success: false, message: 'User not found.' });
-        } else {
-          res.json({ success: false, message: err });
-        }
+        User.findOne({ email: req.body.email.toLowerCase() }, (err, user) => {
+          if (!user) {
+            res.json({ success: false, message: 'User not found.' });
+          } else {
+            if (err) {
+              res.json({ success: false, message: err });
+            } else {
+              const validPassword = user.comparePassword(req.body.password);
+              if (!validPassword) {
+                res.json({ success: false, message: 'Invalid password.' });
+              } else {
+                const token = jwt.sign({ userId: user._id, firstName: user.firstName }, config.secret, { expiresIn: '24h' });
+                res.json({ success: true, message: 'Logged in!' });
+              }
+            }
+          }
+        });
       }
-    });
+    }
   });
 // GET ALL USERS
   router.get('/users', (req, res) => {
