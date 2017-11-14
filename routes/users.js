@@ -137,7 +137,7 @@ router.put('/users/:id', (req, res) => {
     } else if (err) {
       res.json({success: false, message: err});
     } else {
-      // Autofill form with existing date, req.body values CANNOT be blank or user will not save
+      // Autofill form with existing data, req.body values CANNOT be blank or user will not save
       user.email = req.body.email;
       user.password = req.body.password;
       user.firstName = req.body.firstName;

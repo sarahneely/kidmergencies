@@ -84,7 +84,7 @@ module.exports = (router) => {
                                         }
                                     }
                                 } else {
-                                    res.json({ success: true, message: 'Household info saved!', household });
+                                    res.json({ success: true, message: 'Household info saved!' });
                                 }
                             });
                         }
@@ -92,6 +92,35 @@ module.exports = (router) => {
                 }
             }
         }
+    });
+// EDIT A HOUSEHOLD
+    router.put('/households/:id', (req, res) => {
+        Household.findById(req.params.id, (err, household) => {
+            if (!household) {
+                res.send('Househld not found.');
+            } else {
+                if (err) {
+                    res.json({ success: false, message: err.errmsg });  
+                } else {
+                    // Autofill form with existing data, req.body values CANNOT be blank or user will not save
+                    household.phone = req.body.phone;
+                    household.address = {
+                        streetAddress: req.body.streetAddress,
+                        aptNumber: req.body.aptNumber,
+                        city: req.body.city,
+                        state: req.body.state,
+                        zip: req.body.zip
+                    };
+                    household.save((err) => {
+                        if (err) {
+                            res.json({ success: false, message: err }); 
+                        } else {
+                            res.json({ success: true, message: 'Household updated!' });
+                        }
+                    });
+                }
+            }
+        });
     });
     return router;
 }
