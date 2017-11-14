@@ -109,7 +109,7 @@ module.exports = (router) => {
           res.json({ success: false, message: 'Token invalid: ' + err });
         } else {
           req.decoded = decoded;
-          // console.log(req.decoded.firstName);
+          console.log(req.decoded.userId);
           next();
         }
       });
