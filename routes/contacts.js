@@ -118,5 +118,23 @@ module.exports = (router) => {
             }
         });
     });
+    // DELETE A CONTACT
+    router.delete('/contacts/:id', (req, res) => {
+        Contact.findById(req.params.id, (err, contact) => {
+            if (!contact) {
+                res.send('Contact not found.');
+            } else if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                contact.remove((err) => {
+                    if (err) {
+                        res.json({ success: false, message: 'Something didn\'t work.' });
+                    } else {
+                        res.json({ success: true, message: 'Contact deleted.' });
+                    }
+                });
+            }
+        });
+    });
 return router;    
 }
