@@ -4,7 +4,23 @@ const config = require('../config');
 
 // ROUTES
 module.exports = (router) => {
-// ADD A NEW CONTACT
+    // Middleware. Routes that use middlware will come after this function.
+    router.use((req, res, next) => {
+        const token = req.headers['authorization'];
+        if (!token) {
+            return res.status(403).send({ success: false, message: 'No tken provided.' });
+        } else {
+            jwt.verify(token, config.secret, (err, decoded) => {
+                if (err) {
+                    res.json({ success: false, message: 'Token invalid: ' + err });
+                } else {
+                    req.decoded = decoded;
+                    next();
+                }
+            });
+        }
+    });
+    // ADD A NEW CONTACT
     router.post('/contacts', (req, res) => {
         if (!req.body.phone) {
             res.json({ success: false, message: 'Phone number is required.' });
