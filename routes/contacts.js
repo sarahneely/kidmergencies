@@ -78,6 +78,20 @@ module.exports = (router) => {
             }
         })
     });
+    // GET ONE CONTACT
+    router.get('/contacts/:id', (req, res) => {
+        Contact.findById(req.params.id, (err, contact) => {
+            if (!contact) {
+                res.send('Contact not found.');
+            } else {
+                if (err) {
+                    res.json({ success: false, message: err.errmsg });
+                } else {
+                    res.json(contact);
+                }
+            }
+        });
+    });
     // EDIT A CONTACT
     router.put('/contacts:id', (req, res) => {
         Contact.findById(req.params.id, (err contact) => {
