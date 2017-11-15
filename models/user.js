@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
-
+const Household = require('../models/household');
 
 const userSchema = new Schema({
   email: { 
@@ -39,6 +39,19 @@ userSchema.pre('save', function (next) {
     this.password = hash;
     next();
   });
+});
+
+userSchema.pre('remove', function (next) {
+  console.log('arrived to pre');
+  Household.findOneAndRemove({user: this._id}, (err, household) => {
+    if (err) {
+      console.log("household find one failed");
+    } else {
+      console.log('Household deleted');
+    }
+  }).exec();
+  console.log("pre test");
+  next();
 });
 
 userSchema.methods.comparePassword = function (password) {
