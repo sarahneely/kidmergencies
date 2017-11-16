@@ -76,7 +76,7 @@ module.exports = (router) => {
                 res.json({ success: false, message: 'Invalid password.' });
               } else {
                 const token = jwt.sign({ userId: user._id, firstName: user.firstName }, config.secret, { expiresIn: '24h' });
-                res.json({ success: true, message: 'Logged in!' });
+                res.json({ success: true, message: 'Logged in!', token });
               }
             }
           }
@@ -109,7 +109,7 @@ module.exports = (router) => {
           res.json({ success: false, message: 'Token invalid: ' + err });
         } else {
           req.decoded = decoded;
-          // console.log(req.decoded.firstName);
+          console.log(req.decoded.userId);
           next();
         }
       });
@@ -137,7 +137,7 @@ router.put('/users/:id', (req, res) => {
     } else if (err) {
       res.json({success: false, message: err});
     } else {
-      // Autofill form with existing date, req.body values CANNOT be blank or user will not save
+      // Autofill form with existing data, req.body values CANNOT be blank or user will not save
       user.email = req.body.email;
       user.password = req.body.password;
       user.firstName = req.body.firstName;
@@ -153,17 +153,16 @@ router.put('/users/:id', (req, res) => {
   });
 });
 // DELETE A USER
-// ToDo: Add 'pre' to remove contacts, household and history(?) for user before deleting user.
 router.delete('/users/:id', (req, res) => {
   User.findById(req.params.id, (err, user) => {
     if (!user) {
       res.send('User not found.');
     } else if (err) {
-      res.json({success: false, message: err});
+      res.json({ success: false, message: err});
     } else {
       user.remove((err) => {
         if (err) {
-          res.json({success: false, message: err});
+          res.json({ success: false, message: "something went wrong"});
         } else {
           res.json({success: true, message: 'User deleted.'});
         }
