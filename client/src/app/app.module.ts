@@ -3,12 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { RoutingModule } from './app.routes';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+
+    //ROUTING MODULE SHOULD BE LAST
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
