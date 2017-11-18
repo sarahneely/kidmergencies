@@ -172,10 +172,3 @@ router.delete('/users/:id', (req, res) => {
 });
 return router;
 }
-
-// SLIGHTLY MODIFIED FUNCTION TO REMOVE ALL CONTACTS
-// userSchema.pre('remove', function (next) {
-//   console.log('arrived to pre');
-//   Contact.remove({ user: this._id }, (err, contact) => {
-//     if (err) {
-//       console.log("contact remove all failed");

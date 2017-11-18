@@ -49,7 +49,14 @@ userSchema.pre('remove', function (next) {
     } else {
       console.log('Household deleted');
     }
-  }).exec();
+  })
+  Contact.remove({ user: this._id }, (err, contact) => {
+    if (err) {
+      console.log("contact remove all failed");
+    } else {
+      console.log('Contacts deleted');
+    }
+  })
   console.log("pre test");
   next();
 });

@@ -47,27 +47,23 @@ module.exports = (router) => {
                             });
                             contact.save((err) => {
                                 if (err) {
-                                    if (err.code === 11000) {
-                                        res.json({ success: false, message: 'Contact already exists.' });
-                                    } else {
-                                        if (err.errors) {
-                                            if (err.errors.phone) {
-                                                res.json({ success: false, message: err.errors.phone.message });
+                                    if (err.errors) {
+                                        if (err.errors.phone) {
+                                            res.json({ success: false, message: err.errors.phone.message });
+                                        } else {
+                                            if (err.errors.firstName) {
+                                                res.json({ success: false, message: err.errors.firstName.message });
                                             } else {
-                                                if (err.errors.firstName) {
-                                                    res.json({ success: false, message: err.errors.firstName.message });
+                                                if (err.errors.lastName) {
+                                                    res.json({ success: false, message: err.errors.lastName.message });
                                                 } else {
-                                                    if (err.errors.lastName) {
-                                                        res.json({ success: false, message: err.errors.lastName.message });
+                                                    if (err.errors.relationship) {
+                                                        res.json({ success: false, message: err.errors.relationship.message });
                                                     } else {
-                                                        if (err.errors.relationship) {
-                                                            res.json({ success: false, message: err.errors.relationship.message });
+                                                        if (err.errors.image) {
+                                                            res.json({ success: false, message: err.errors.image.message });
                                                         } else {
-                                                            if (err.errors.image) {
-                                                                res.json({ success: false, message: err.errors.image.message });
-                                                            } else {
-                                                                res.json({ success: flase, message: err });
-                                                            }
+                                                            res.json({ success: false, message: err });
                                                         }
                                                     }
                                                 }
@@ -109,8 +105,8 @@ module.exports = (router) => {
         });
     });
     // EDIT A CONTACT
-    router.put('/contacts:id', (req, res) => {
-        Contact.findById(req.params.id, (err contact) => {
+    router.put('/contacts/:id', (req, res) => {
+        Contact.findById(req.params.id, (err, contact) => {
             if (!contact) {
                 res.send('Contact not found.');
             } else {
@@ -125,7 +121,7 @@ module.exports = (router) => {
                     contact.image = req.body.image;
                     contact.save((err) => {
                         if (err) {
-                            res.json({ success: false, message: err });
+                            res.json({ success: false, message: err.errmsg });
                         } else {
                             res.json({ success: true, message: 'Contact information updated.' });
                         }
