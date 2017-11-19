@@ -12,10 +12,14 @@
     "bcrypt": "^1.0.3",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0-beta.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.0",
     "mongoose": "^4.13.2",
     "mongoose-unique-validator": "^1.0.6"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.5.2"
   }
 }
