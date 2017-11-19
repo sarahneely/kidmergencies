@@ -12,7 +12,7 @@ import { RoutingModule } from './app.routes';
   imports: [
     BrowserModule,
 
-    //ROUTING MODULE SHOULD BE LAST
+    // ROUTING MODULE SHOULD BE LAST
     RoutingModule
   ],
   providers: [],
