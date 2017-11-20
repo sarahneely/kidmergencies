@@ -54,7 +54,7 @@ app.use('/api', router);
 // Get routes from files in app/routes
 app.use('/users', users);
 app.use('/households', households);
-app.use('contacts', contacts);
+app.use('/contacts', contacts);
 
 // START THE SERVER
 app.listen(port, () => {
