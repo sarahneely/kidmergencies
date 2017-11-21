@@ -16,7 +16,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
 
-    //ROUTING MODULE SHOULD BE LAST
+    // ROUTING MODULE SHOULD BE LAST
     RoutingModule
   ],
   providers: [],
