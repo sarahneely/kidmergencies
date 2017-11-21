@@ -6,12 +6,14 @@ import { RoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { SplashComponent } from './splash/splash.component';
+import { AdultContactsComponent } from './adult-contacts/adult-contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    SplashComponent
+    SplashComponent,
+    AdultContactsComponent
   ],
   imports: [
     BrowserModule,
