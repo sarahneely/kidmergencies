@@ -4,14 +4,12 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { RoutingModule } from './app.routes';
 
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
-import { SplashComponent } from './splash/splash.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-    SplashComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
