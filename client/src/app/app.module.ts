@@ -17,7 +17,8 @@ import { SplashComponent } from './splash/splash.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    // ROUTING MODULE SHOULD BE LAST
+
+    //ROUTING MODULE SHOULD BE LAST
     RoutingModule
   ],
   providers: [],
