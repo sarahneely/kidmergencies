@@ -11,9 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent {
 
   constructor(
-    public id: number,
-    public email: string,
-    public password: string,
+    // public id: number,
+    // public email: string,
+    // public password: string,
   ) {  }
 
 }
