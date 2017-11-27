@@ -6,21 +6,21 @@ import { RoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { SplashComponent } from './splash/splash.component';
-import { AdultContactsComponent } from './adult-contacts/adult-contacts.component';
+import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     SplashComponent,
-    AdultContactsComponent
+    ContactsAdultViewComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
 
-    //ROUTING MODULE SHOULD BE LAST
+    // ROUTING MODULE SHOULD BE LAST
     RoutingModule
   ],
   providers: [],
