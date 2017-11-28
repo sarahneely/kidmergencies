@@ -64,7 +64,7 @@ body{
 .police{
   border: 2px solid blue;
   background: white;
-  box-shadow: 0 5px lightgray;
+  box-shadow: 0 10px lightgray;
 }
 #policeimg{
   border-radius: 30px;
@@ -74,7 +74,7 @@ body{
 .fire{
   border: 2px solid orange;
   background: white;
-  box-shadow: 0 5px lightgray;
+  box-shadow: 0 10px lightgray;
 }
 #fireimg{
   border-radius: 30px;
@@ -83,8 +83,9 @@ body{
   border: 2px solid #F5F5F5;
 }
 .med{
-    border: 2px solid red;
-    background: white;
+  border: 2px solid red;
+  background: white;
+  box-shadow: 0 10px lightgray;
 }
 #medimg{
   border-radius: 30px;
@@ -95,7 +96,7 @@ body{
 .fam{
   border: 2px solid green;
   background: white;
-  box-shadow: 0 5px lightgray;
+  box-shadow: 0 10px lightgray;
 }
 #famimg{
   border-radius: 30px;
