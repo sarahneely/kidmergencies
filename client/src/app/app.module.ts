@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { RoutingModule } from './app.routes';
+import { SplashPageComponent } from './splash-page/splash-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SplashPageComponent
   ],
   imports: [
     BrowserModule,
