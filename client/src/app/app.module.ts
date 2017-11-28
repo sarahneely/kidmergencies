@@ -4,17 +4,21 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RoutingModule } from './app.routes';
 
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
 import { SplashComponent } from './splash/splash.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+
 import { AddContactsComponent } from './add-contacts/add-contacts.component';
 import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult-view.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
     SplashComponent,
+    RegisterComponent,
+    LoginComponent,
     AddContactsComponent,
     ContactsAdultViewComponent,
   ],
