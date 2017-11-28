@@ -8,6 +8,10 @@ import { SplashComponent } from './splash/splash.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
+import { AddContactsComponent } from './add-contacts/add-contacts.component';
+import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult-view.component';
+
+
 
 @NgModule({
   declarations: [
@@ -15,6 +19,8 @@ import { LoginComponent } from './login/login.component';
     SplashComponent,
     RegisterComponent,
     LoginComponent,
+    AddContactsComponent,
+    ContactsAdultViewComponent,
   ],
   imports: [
     BrowserModule,
