@@ -12,10 +12,13 @@ import { AddContactsComponent } from './add-contacts/add-contacts.component';
 import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult-view.component';
 
 
+import { RoutingModule } from './app.routes';
+import { SplashPageComponent } from './splash-page/splash-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SplashPageComponent,
     SplashComponent,
     RegisterComponent,
     LoginComponent,
