@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { AddContactsComponent } from './add-contacts/add-contacts.component';
 import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult-view.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SplashPageComponent } from './splash-page/splash-page.component';
     LoginComponent,
     AddContactsComponent,
     ContactsAdultViewComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
