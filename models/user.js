@@ -49,7 +49,7 @@ userSchema.pre('remove', function (next) {
     } else {
       console.log('Household deleted');
     }
-  }).exec();
+  })
   console.log("pre test");
   next();
 });
