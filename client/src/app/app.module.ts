@@ -9,6 +9,7 @@ import { AddContactsComponent } from './add-contacts/add-contacts.component';
 import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult-view.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
 import { SettingsComponent } from './settings/settings.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SettingsComponent } from './settings/settings.component';
     AddContactsComponent,
     ContactsAdultViewComponent,
     SettingsComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
