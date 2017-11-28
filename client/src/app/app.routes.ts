@@ -8,7 +8,7 @@ import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult
 const appRoutes: Routes = [
     { path: '', component: SplashComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'contacts-adult-view', component: ContactsAdultViewComponent },
+    { path: 'contacts-view', component: ContactsAdultViewComponent },
 ];
 
 @NgModule({
