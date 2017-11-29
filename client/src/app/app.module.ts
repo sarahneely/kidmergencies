@@ -10,6 +10,8 @@ import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult
 import { SplashPageComponent } from './splash-page/splash-page.component';
 import { SettingsComponent } from './settings/settings.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { HouseholdInfoComponent } from './household-info/household-info.component';
+import { SettingsNavComponent } from './settings-nav/settings-nav.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     ContactsAdultViewComponent,
     SettingsComponent,
     HomepageComponent,
+    HouseholdInfoComponent,
+    SettingsNavComponent,
   ],
   imports: [
     BrowserModule,
