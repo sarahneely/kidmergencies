@@ -7,9 +7,11 @@ import { AddContactsComponent } from './add-contacts/add-contacts.component';
 import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult-view.component';
 import { HouseholdInfoComponent } from './household-info/household-info.component';
 import { SettingsComponent } from './settings/settings.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const appRoutes: Routes = [
     { path: '', component: SplashPageComponent },
+    { path: 'home', component: HomepageComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'contacts-view', component: ContactsAdultViewComponent },
