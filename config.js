@@ -1,4 +1,4 @@
 module.exports = {
     'secret': 'supersecretsecrets',
-    'database': 'mongodb://localhost:27018/kidmergencies'
+    'database': 'charliebrown:snoopy@ds143245.mlab.com:43245/kidmergency'
 };
