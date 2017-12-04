@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
 import { LoginComponent } from './login/login.component';
-import { AddContactsComponent } from './add-contacts/add-contacts.component';
+import { EmergencyContactsComponent } from './emergency-contacts/emergency-contacts.component';
 import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult-view.component';
 
 
@@ -12,7 +12,7 @@ const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'contacts-view', component: ContactsAdultViewComponent },
-    { path: 'add-contacts', component: AddContactsComponent },
+    { path: 'emergency-contacts', component: EmergencyContactsComponent },
 
 ];
 
