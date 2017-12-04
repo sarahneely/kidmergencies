@@ -1,0 +1,10 @@
+.wrapper {
+    background: #e3e4e8;
+    margin: 0 auto;
+    max-width: 500px;
+    display: grid;
+ }
+ 
+ .kid--sect {
+    background: ##7180ed;
+ }
