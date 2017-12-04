@@ -1,10 +1,27 @@
 .wrapper {
     background: #e3e4e8;
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 900px;
     display: grid;
+		grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, minmax(150px, auto));
+ }
+ nav {
+ 	grid-column: 1 / 7;
+	grid-row: 1 / 2;
+ }
+ 
+ ul > li {
+ 	display: inline-block;
  }
  
  .kid--sect {
-    background: ##7180ed;
+    background: #7180ed;
+		grid-column: 1 / 7;
+		grid-row: 2 / 7;
+ }
+ 
+ .nine-one-one {
+ 	grid-column: 3 / 4;
+	grid-row: 5 / 6;
  }
