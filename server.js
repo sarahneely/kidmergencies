@@ -8,6 +8,8 @@ const User = require('./models/user');
 const bodyParser = require('body-parser');
 // const path = require('path');
 const users = require('./routes/users')(router);
+const households = require('./routes/households')(router);
+const contacts = require('./routes/contacts')(router);
 // const cors = require('cors');
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -45,10 +47,14 @@ app.use(function(req, res, next) {
 router.get('/', function(req, res) {
   res.json({message: 'api works!'});
 });
-// Get routes from files in app/routes
-app.use('/users', users);
+
 // Prefix routes with /api
 app.use('/api', router);
+
+// Get routes from files in app/routes
+app.use('/users', users);
+app.use('/households', households);
+app.use('/contacts', contacts);
 
 // START THE SERVER
 app.listen(port, () => {
