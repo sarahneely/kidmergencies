@@ -1,15 +1,34 @@
 import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
+
+export interface RegisterModel{
+  email: string,
+  firstName: string,
+  lastName: string,
+  phoneNumber: string,
+  password: string,
+  confirmPassword: string
+}
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent {
+export class RegisterComponent extends DialogComponent<RegisterModel, boolean> implements RegisterModel {
+  model: any = {};
+  email: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  password: string;
+  confirmPassword: string;
   registerForm;
 
-  constructor(private formBuilder: FormBuilder) {
+  
+  constructor(private formBuilder: FormBuilder, dialogService: DialogService) {
+    super(dialogService);
     this.createForm();
    }
 
@@ -34,6 +53,9 @@ export class RegisterComponent {
       confirmPassword: this.registerForm.get('confirmPassword').value,
     };
     console.log(user);
-
  }
+confirm(){
+  this.result = true;
+  this.close();
+}
 }
