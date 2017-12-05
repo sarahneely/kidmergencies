@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegisterComponent } from '../register/register.component';
 import { DialogService } from 'ng2-bootstrap-modal';
+import { LoginComponent } from '../login/login.component';
 
 // import {ServiceName} from './service-file-path';
 @Component({
@@ -23,13 +24,17 @@ register() {
   ngOnInit() {
   }
 
-  login(creds) {
-    console.log('login');
-    console.log(this.creds);
-    // this.serviceName.post(`login`, this.creds)
-    //   .then((res) => {
-    //
-    //   });
-  }
+  // login(creds) {
+  //   console.log('login');
+  //   console.log(this.creds);
+  //   // this.serviceName.post(`login`, this.creds)
+  //   //   .then((res) => {
+  //   //
+  //   //   });
+  // }
+login(){
+  let disposable = this.dialogService.addDialog(LoginComponent, { })  
+}
+
 
 }
