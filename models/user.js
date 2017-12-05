@@ -5,17 +5,6 @@ const Household = require('../models/household');
 var crypto = require('crypto');
 
 const userSchema = new Schema({
-  // email: {
-  // type: String,
-  // unique: true,
-  // required: true
-  // },
-  // firstName: {
-  //   type: String,
-  //   required: true
-  // },
-  // hash: String,
-  // salt: String
   email: { 
     type: String, 
     required: true, 
