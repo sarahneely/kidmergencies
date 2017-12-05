@@ -6,7 +6,7 @@ const householdMemberSchema = new Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     relationship: { type: String, required: true },
-    contactPhone: {type: String}
+    contactPhone: {type: String},
     medical: [{
       conditions: {type: String},
       allergies: {type: String}

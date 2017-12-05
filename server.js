@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors');
 const router = express.Router();
 const app = express();
 const mongoose = require('mongoose');
@@ -29,9 +30,9 @@ mongoose.connect(config.database, (err) => {
 });
 app.set('superSecret', config.secret);
 // Middleware
-// app.use(cors({
-//   origin: 'http://localhost:4200'
-// }))
+app.use(cors({
+  origin: 'http://localhost:4200'
+}))
 
 // app.use(express.static(__dirname + '/dist'));
 
