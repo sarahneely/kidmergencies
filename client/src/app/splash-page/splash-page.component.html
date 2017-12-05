@@ -1,13 +1,16 @@
-<div class="splash_background">
+<div class="container-fluid">
+<div class="row justify-content-center">
   <img src="../assets/img/kidmergencies-3.png" alt="">
-  <div class="spash_copy">
-    <p></p>
+</div>
+</div>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="splash_copy">
+      <p>Children are the joy of our lives. and we do everything we can to keep the children around us safe. We only entrust them with family and friends that we know well enough to care for our most precious little humans. We know they will do everything they can to keep them as safe, happy, and healthy as you yourself would. Well what happens when they're away from you, or it's just the two of you, and there's an emergency? What happens when the adults aren't able to contact authorities and it's left up to the kids to do that? Kidmergencies aimes to provide young children with the ability to contact authorities in emergency situations. We want to make it easy and seamless for a child to let the authorities know what's going on and what type of services are needed. It's a free service to you, so feel free to sign up. It only takes a minute to fill out the household info and family contacts, pertinant information for the paramedics and oficers to provide the best care possible.</p>
+    </div>
   </div>
-  <input type="text" id="email" class="" [ngModel]="creds.email">
-  <input type="password" [ngModel]="creds.password">
-  <button (click)="login()">Login</button>
-  <div class="container">
-    <button class="btn btn-default" (click)=register()>Register</button>
-  </div>
-  </div>
-
+</div>
+<div class="row justify-content-center">
+  <button (click)="login()" class="btn btn-default col-md-2 col-md-offset-4">Login</button>
+  <button class="btn btn-default col-md-2" (click)=register()>Register</button>
+</div>
