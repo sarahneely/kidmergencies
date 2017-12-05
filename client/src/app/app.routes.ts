@@ -13,6 +13,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'contacts-view', component: ContactsAdultViewComponent },
     { path: 'add-contacts', component: AddContactsComponent },
+    
 
 ];
 

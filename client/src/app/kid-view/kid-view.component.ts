@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-kid-view',
+  selector: 'kid-view',
   templateUrl: './kid-view.component.html',
   styleUrls: ['./kid-view.component.css']
 })
