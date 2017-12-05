@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+.bold_text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.normal_text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.heading_space {
+    margin: 50px 0px;
+}
+
+.heading_text {
+    font-size: 6em;
+    color: #6F73EF;
+}
+
+.section_border {
+    border: 2px inset #E6E9EE;
+}
+
+.input_background {
+    background-color: #D6EFFF;
+}
+
+.margin_input_contacts {
+    margin-left: 10px;
+}
+
+.label_top {
+    margin-top: 10px;
+}
+
+button.btn.btn-primary.button_margin {
+    margin-top: 284px;
+    margin-left: 130px;
+}
+
+.custom-file {
+    margin-top: 60px;
+}
+
