@@ -3,7 +3,9 @@
   <div class="spash_copy">
     <p></p>
   </div>
-  <input type="text" id="email" class="" [ngModel]="creds.email">
-  <input type="password" [ngModel]="creds.password">
-  <button (click)="login()">Login</button>
-</div>
+  <button class="btn btn-default" (click)="login()">Login</button>
+  <div class="container">
+    <button class="btn btn-default" (click)=register()>Register</button>
+  </div>
+  </div>
+

@@ -1,5 +1,6 @@
 .splash_background {
-  /* background-image: url(../assets/img/splash_bkgnd.jpg); */
+  /* background-image: url('../assets/img/splash_bkgnd.jpg'); */
   background-repeat: no-repeat;
   background-size: contain;
 }
+/* // Error in here somewhere... */
