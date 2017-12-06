@@ -47,6 +47,7 @@ userSchema.pre('save', function (next) {
   });
 });
 
+
 // Don't know if this is needed.... 
 userSchema.pre('remove', function (next) {
   console.log('arrived to pre');
@@ -61,6 +62,7 @@ userSchema.pre('remove', function (next) {
   next();
 });
 // This end of section that isn't or is needed... 
+
 
 userSchema.methods.comparePassword = function (password) {
   return bcrypt.compareSync(password, this.password);
