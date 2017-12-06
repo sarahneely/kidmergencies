@@ -13,7 +13,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HouseholdInfoComponent } from './household-info/household-info.component';
 import { SettingsNavComponent } from './settings-nav/settings-nav.component';
-import { BootstrapModalModule } from "ng2-bootstrap-modal";
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
