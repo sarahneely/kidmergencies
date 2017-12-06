@@ -72,6 +72,10 @@ button.btn.btn-primary.button_margin {
     margin-right: 15px; 
 }
 
+.margin_top {
+    margin-top: 10px;
+}
+
 .push_right {
     margin-left: 25px;
 }
