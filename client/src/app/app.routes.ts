@@ -12,7 +12,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 const appRoutes: Routes = [
     { path: '', component: SplashPageComponent },
     { path: 'home', component: HomepageComponent },
-    // { path: 'register', component: RegisterComponent },
+    { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'contacts-view', component: ContactsAdultViewComponent },
     { path: 'settings', component: SettingsComponent },

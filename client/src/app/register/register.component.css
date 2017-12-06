@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+.bold_text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.normal_text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.register_background {
+    background-color: #D6EFFF;
+}
+
+.heading_text {
+    font-size: 6em;
+    color: #ffffff;
+    border: 2px solid #E6E9EE;
+}
