@@ -20,11 +20,12 @@
 }
 
 .section_border {
-    border: 2px inset #E6E9EE;
+    border: 3px inset #E6E9EE;
 }
 
 .input_background {
     background-color: #D6EFFF;
+    border: 3px solid #E6E9EE;
 }
 
 .margin_input_contacts {
@@ -37,7 +38,10 @@
 
 button.btn.btn-primary.button_margin {
     margin-top: 284px;
-    margin-left: 130px;
+    margin-left: 110px;
+    color: #0011FF;
+    background-color: #ffffff;
+    border-color: #d9d9d9;
 }
 
 .custom-file {
@@ -45,15 +49,17 @@ button.btn.btn-primary.button_margin {
 }
 
 .gray_line {
-    border: 3px solid #cccccc;
-    margin-top: 16px;
-    background-color: #cccccc;
+    border: 3px solid #E6E9EE;
+    margin-top: 24px;
+    margin-bottom: 36px;
+    background-color: #E6E9EE;
 }
 
 .gray_box {
     height: 150px;
     width: 150px;
-    background-color: #cccccc;
+    border: 1px solid #d9d9d9;
+    background-color: #ffffff;
     margin-top: 10px;
     padding: 20px;
 }
@@ -71,6 +77,7 @@ button.btn.btn-primary.button_margin {
 }
 
 .edit_btn {
-    margin-left: 70px;
+    margin-left: 123px;
     margin-top: 5px;
+    color: #0011FF;
 }
