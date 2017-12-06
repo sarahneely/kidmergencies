@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 const Household = require('../models/household');
-var crypto = require('crypto');
+const crypto = require('crypto');
 
 const userSchema = new Schema({
   email: { 
@@ -47,18 +47,20 @@ userSchema.pre('save', function (next) {
   });
 });
 
-// userSchema.pre('remove', function (next) {
-//   console.log('arrived to pre');
-//   Household.findOneAndRemove({user: this._id}, (err, household) => {
-//     if (err) {
-//       console.log("household find one failed");
-//     } else {
-//       console.log('Household deleted');
-//     }
-//   })
-//   console.log("pre test");
-//   next();
-// });
+// Don't know if this is needed.... 
+userSchema.pre('remove', function (next) {
+  console.log('arrived to pre');
+  Household.findOneAndRemove({user: this._id}, (err, household) => {
+    if (err) {
+      console.log("household find one failed");
+    } else {
+      console.log('Household deleted');
+    }
+  })
+  console.log("pre test");
+  next();
+});
+// This end of section that isn't or is needed... 
 
 userSchema.methods.comparePassword = function (password) {
   return bcrypt.compareSync(password, this.password);
