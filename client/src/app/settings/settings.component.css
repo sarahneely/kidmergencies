@@ -1,11 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 /* .small-icon{
     height: 2vw;
     width: 2vw;
 } */
 /* .in-line{
     display: inline;
-    
+
 } */
+
+.settings_body {
+  background-color: #D6EFFF;
+}
+
 .centered{
     text-align: center;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #6F73EF;
+  font-weight: bold;
+}
+
+p {
+background-color: rgba(230, 233, 238, 0.35);
+color: #6F73EF;
+font-family: 'Montserrat', sans-serif;
+}
+
+.settings_links{
+color: #6F73EF;
+text-decoration: underline;
+font-family: 'Montserrat', sans-serif;
+left: 50%
 }
