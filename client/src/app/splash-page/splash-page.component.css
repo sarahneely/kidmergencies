@@ -3,22 +3,21 @@
 
 img {
   opacity: .40;
-  height: 1200px;
-  width: 1200px;
   z-index: -1;
-  position: absolute;
-  top: 15px;
+  position: fixed;
 }
 
 .splash_copy {
-  color: rgb(31, 34, 95,);
+  color: rgb(31, 34, 95);
   font-family: 'Montserrat', sans-serif;
   background-color: rgba(230, 233, 238, .39);
   text-align: center;
   z-index: 5;
-  position: absolute;
-  top: 500px;
+  position: fixed;
   font-weight: bold;
+  top: 50%;
+  left: 0;
+  margin: 15px;
 }
 
 button {
@@ -27,5 +26,4 @@ button {
   color: #E6E9EE;
   font-family: 'Montserrat', sans-serif;
   margin: 5px;
-  top: 775px;
 }
