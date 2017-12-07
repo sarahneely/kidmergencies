@@ -16,6 +16,15 @@
 
 .heading_text {
     font-size: 6em;
+}
+
+.white_text {
     color: #ffffff;
-    border: 2px solid #E6E9EE;
+    text-shadow: 1px 1px 2px #E6E9EE;
+}
+
+button.btn.btn-primary.btn-lg {
+    color: #0011FF;
+    background-color: #ffffff;
+    border-color: #d9d9d9;
 }
