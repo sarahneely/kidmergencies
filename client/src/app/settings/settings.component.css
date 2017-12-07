@@ -21,17 +21,22 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   color: #6F73EF;
   font-weight: bold;
+  text-align: center;
+  border-bottom: 5px solid #6F73EF;
 }
 
 p {
 background-color: rgba(230, 233, 238, 0.35);
 color: #6F73EF;
 font-family: 'Montserrat', sans-serif;
+text-align: center;
+font-size: 18px;
 }
 
 .settings_links{
 color: #6F73EF;
 text-decoration: underline;
 font-family: 'Montserrat', sans-serif;
-left: 50%
+left: 50%;
+text-align: center;
 }
