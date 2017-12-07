@@ -8,4 +8,5 @@ const historySchema = new Schema({
   message: { type: String, required: true }
 });
 
+// Todo: upon deletion of user, also delete user's history
 module.exports = mongoose.model('History', historySchema);

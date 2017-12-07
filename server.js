@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const router = express.Router();
 const app = express();
 const mongoose = require('mongoose');
@@ -8,6 +9,8 @@ const User = require('./models/user');
 const bodyParser = require('body-parser');
 // const path = require('path');
 const users = require('./routes/users')(router);
+const households = require('./routes/households')(router);
+const contacts = require('./routes/contacts')(router);
 // const cors = require('cors');
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -27,9 +30,9 @@ mongoose.connect(config.database, (err) => {
 });
 app.set('superSecret', config.secret);
 // Middleware
-// app.use(cors({
-//   origin: 'http://localhost:4200'
-// }))
+app.use(cors({
+  origin: 'http://localhost:4200'
+}))
 
 // app.use(express.static(__dirname + '/dist'));
 
@@ -45,10 +48,14 @@ app.use(function(req, res, next) {
 router.get('/', function(req, res) {
   res.json({message: 'api works!'});
 });
-// Get routes from files in app/routes
-app.use('/users', users);
+
 // Prefix routes with /api
 app.use('/api', router);
+
+// Get routes from files in app/routes
+app.use('/users', users);
+app.use('/households', households);
+app.use('/contacts', contacts);
 
 // START THE SERVER
 app.listen(port, () => {
