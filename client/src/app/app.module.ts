@@ -37,7 +37,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     BootstrapModalModule,
-    HttpClientModule,     
+    HttpClientModule,
 
     // ROUTING MODULE SHOULD BE LAST
     RoutingModule

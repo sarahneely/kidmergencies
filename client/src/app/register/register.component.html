@@ -9,66 +9,57 @@
         <div class="row">
           <div class="col-sm-12">
             <form class="form-group" [formGroup]="registerForm" (submit)="onRegisterSubmit()">
-      <!-- Email -->
-              <div class="form-group normal_text white_text">
-                <label for="email">Email</label>
-                <input 
-                class="form-control" 
-                type="email" 
-                id="emailInput" 
-                name="email" 
-                formControlName="email">
-              </div>
-      <!-- First and Last Names -->
-              <div class="form-group normal_text white_text">
-                <label for="firstName"> First Name </label>
-                <input 
-                class="form-control" 
-                type="text" 
-                id="firstName" 
-                name="firstName" 
-                formControlName="firstName">
-              </div>
-              <div class="form-group normal_text white_text">
-                <label for="lastName"> Last Name </label>
-                <input 
-                class="form-control" 
-                type="text" 
-                id="lastName" 
-                name="lastName" 
-                formControlName="lastName">
-              </div>
-      <!-- Phone Number -->
-              <div class="form-group normal_text white_text">
-                <label for="phoneNumber">Phone Number</label>
-                <input 
-                class="form-control" 
-                type="text" 
-                id="phoneNumber" 
-                name="phoneNumber" 
-                formControlName="phoneNumber">
-              </div>
-      <!-- Password -->
-              <div class="form-group normal_text white_text">
-                <label for="password">Password</label>
-                <input 
-                class="form-control" 
-                type="password" 
-                id="password" 
-                name="password" 
-                formControlName="password">
-                <small class="form-text text-muted"> Password must be at least 8 characters and must contain at least one uppercase letter, lowercase letter, number and special character.</small>
-              </div>
-      <!-- Confirm Password -->
-              <div class="form-group normal_text white_text">
-                <label for="confirmPassword">Confirm Password</label>
-                <input 
-                class="form-control" 
-                type="password" 
-                id="confirmPassword" 
-                name="confirmPassword" 
-                formControlName="confirmPassword">
-              </div>
+              
+                <!-- First and Last Names -->
+                <div class="form-group normal_text white_text input_text">
+                  <label for="firstName"> First Name </label>
+                  <input class="form-control" type="text" id="firstName" name="firstName" formControlName="firstName">
+                </div>
+                <div class="form-group normal_text white_text input_text">
+                  <label for="lastName"> Last Name </label>
+                  <input class="form-control" type="text" id="lastName" name="lastName" formControlName="lastName">
+                </div>
+                <!-- Email -->
+                <div class="form-group normal_text white_text input_text">
+                  <label for="email">Email</label>
+                  <input class="form-control" type="email" id="emailInput" name="email" formControlName="email">
+                </div>
+                <!-- Password -->
+                <div class="form-group normal_text">
+                  <label for="password" class=" white_text input_text">Password</label>
+                  <input class="form-control" type="password" id="password" name="password" formControlName="password">
+                  <small class="form-text password_msg"> Password must be at least 8 characters and must contain at least one uppercase letter, lowercase letter, number and special
+                    character.</small>
+                </div>
+                <!-- Confirm Password -->
+                <div class="form-group normal_text white_text input_text">
+                  <label for="confirmPassword">Confirm Password</label>
+                  <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+                </div>
+                
+                <!-- Phone Number -->
+                <div class="form-group normal_text white_text input_text">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input class="form-control" type="text" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber">
+                </div>
+                <!-- Address -->
+                <div class="form-group normal_text white_text input_text">
+                  <label for="streetAddress">Street Address</label>
+                  <input class="form-control" type="text" id="streetAddress" name="streetAddress" formControlName="streetAddress">
+                </div>
+                <div class="form-group normal_text white_text input_text">
+                  <label for="city">City</label>
+                  <input class="form-control" type="text" id="city" name="city" formControlName="city">
+                </div>
+                <div class="form-group normal_text white_text input_text">
+                  <label for="state">State</label>
+                  <input class="form-control" type="text" id="state" name="state" formControlName="state">
+                </div>
+                <div class="form-group normal_text white_text input_text">
+                  <label for="zipCode">Zip Code</label>
+                  <input class="form-control" type="text" id="zipCode" name="zipCode" formControlName="zipCode">
+                </div>
+              
               <button type="submit" class="btn btn-primary btn-lg bold_text">Continue</button>
             </form>
           </div>
