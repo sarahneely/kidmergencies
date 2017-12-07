@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormBuilder, FormGroup} from '@angular/forms';
 import { DialogComponent, DialogService } from 'ng2-bootstrap-modal';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export interface RegisterModel{
   email: string,
@@ -25,9 +26,9 @@ export class RegisterComponent extends DialogComponent<RegisterModel, boolean> i
   password: string;
   confirmPassword: string;
   registerForm;
-
+  registerUrl;
   
-  constructor(private formBuilder: FormBuilder, dialogService: DialogService) {
+  constructor(private formBuilder: FormBuilder, dialogService: DialogService, private http: HttpClient) {
     super(dialogService);
     this.createForm();
    }
@@ -53,6 +54,11 @@ export class RegisterComponent extends DialogComponent<RegisterModel, boolean> i
       confirmPassword: this.registerForm.get('confirmPassword').value,
     };
     console.log(user);
+    this.registerUrl = "http://localhost:8080/api/register";
+    this.http.post(this.registerUrl, user)
+    .subscribe(data => {
+    console.log('User logged in: ', data);
+    });
  }
 confirm(){
   this.result = true;
