@@ -17,7 +17,6 @@ import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
