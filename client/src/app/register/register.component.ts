@@ -4,13 +4,13 @@ import { DialogComponent, DialogService } from 'ng2-bootstrap-modal';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-export interface RegisterModel{
-  email: string,
-  firstName: string,
-  lastName: string,
-  phoneNumber: string,
-  password: string,
-  confirmPassword: string
+export interface RegisterModel {
+  email: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  password: string;
+  confirmPassword: string;
 }
 
 @Component({
@@ -24,6 +24,10 @@ export class RegisterComponent extends DialogComponent<RegisterModel, boolean> i
   firstName: string;
   lastName: string;
   phoneNumber: string;
+  streetAddress: string;
+  city: string;
+  state: string;
+  zipCode: string;
   password: string;
   confirmPassword: string;
   registerForm;
@@ -41,6 +45,10 @@ export class RegisterComponent extends DialogComponent<RegisterModel, boolean> i
       firstName: '',
       lastName: '',
       phoneNumber: '',
+      streetAddress: '',
+      city: '',
+      state: '',
+      zipCode: '',
       password: '',
       confirmPassword: ''
     });
@@ -52,11 +60,15 @@ export class RegisterComponent extends DialogComponent<RegisterModel, boolean> i
       firstName: this.registerForm.get('firstName').value,
       lastName: this.registerForm.get('lastName').value,
       phoneNumber: this.registerForm.get('phoneNumber').value,
+      streetAddress: this.registerForm.get('streetAddress').value,
+      city: this.registerForm.get('city').value,
+      state: this.registerForm.get('state').value,
+      zipCode: this.registerForm.get('zipCode').value,
       password: this.registerForm.get('password').value,
       confirmPassword: this.registerForm.get('confirmPassword').value,
     };
     console.log(user);
-    this.registerUrl = "http://localhost:8080/api/register";
+    this.registerUrl = 'http://localhost:8080/api/register';
     this.http.post(this.registerUrl, user)
     .subscribe(data => {
       
