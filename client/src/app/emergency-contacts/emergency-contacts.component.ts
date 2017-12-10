@@ -17,10 +17,12 @@ export class EmergencyContactsComponent implements OnInit {
   image: string;
   user: string;
   contactForm;
+  count: number = 0;
   contactsUrl: any;
-  contacts: any;
+  contacts: any = [];
   contact: any;
   users_contacts: any;
+  contacts_array: any;
   allUserContactsUrl: string;
   token: string = localStorage.getItem('token');
   private headers: Headers = new Headers();
@@ -79,23 +81,31 @@ export class EmergencyContactsComponent implements OnInit {
         .set('Content-Type', 'application/json')
       })
     .subscribe(data => {
-      for(let i of Object.keys(data)){
-        // console.log("data[i].user", data[i].user);
-        if(data[i].user == localStorage.getItem('id'))
-        {
-          this.contact = data[i];
-          console.log('data[i]', data[i]);
-        }
-        this.contact = data;
-      }
-      // this.contacts = data;
-      // for(let i=0;i<this.contacts.length;i++)
-      // {
-      //   this.contact = this.contacts[i];
-      // }
 
-      // console.log('localStorage.getItem(`id`)', localStorage.getItem(`id`));
-    });
+      console.log('data', data);
+      for(let i of Object.keys(data)){
+        if(data[i].user === localStorage.getItem('id'))
+        {
+          this.count++;
+          let temp = data[i];
+          this.contacts.push(temp);
+        }
+
+      }
+      console.log('this.contacts', this.contacts);
+        // for(let j=0;j<this.count;j++)
+        // {
+        //    this.contact = this.contacts_array[j];
+        //    console.log('this.contact', this.contact);
+        // }
+      // this.contacts = data;
+      // this.contact = this.contacts[this.count];
+      for(let i=0;i<this.count;i++)
+      {
+        this.contact = this.contacts[i];
+      }
+      // console.log(this.count);
+      });
   }
   ngOnInit() {
     this.getContacts();
