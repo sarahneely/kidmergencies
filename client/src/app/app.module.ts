@@ -6,7 +6,7 @@ import { RoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { AddContactsComponent } from './add-contacts/add-contacts.component';
+import { EmergencyContactsComponent } from './emergency-contacts/emergency-contacts.component';
 import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult-view.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -23,7 +23,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
     SplashPageComponent,
     RegisterComponent,
     LoginComponent,
-    AddContactsComponent,
+    EmergencyContactsComponent,
     ContactsAdultViewComponent,
     SettingsComponent,
     HomepageComponent,
@@ -36,7 +36,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     BootstrapModalModule,
-    HttpClientModule,     
+    HttpClientModule,
 
     // ROUTING MODULE SHOULD BE LAST
     RoutingModule
