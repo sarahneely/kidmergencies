@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
+
+.bold_text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.normal_text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.heading_space {
+    margin: 50px 0px;
+}
+
+.heading_text {
+    font-size: 6em;
+    color: #6F73EF;
+}
+
+.section_border {
+    border: 3px inset #E6E9EE;
+}
+
+.input_background {
+    background-color: #D6EFFF;
+    border: 3px solid #E6E9EE;
+}
+
+.margin_input_contacts {
+    margin-left: 10px;
+}
+
+.label_top {
+    margin-top: 10px;
+}
+
+button.btn.btn-primary.button_margin {
+    margin-top: 284px;
+    margin-left: 110px;
+    color: #0011FF;
+    background-color: #ffffff;
+    border-color: #d9d9d9;
+}
+
+.custom-file {
+    margin-top: 60px;
+}
+
+.gray_line {
+    border: 3px solid #E6E9EE;
+    margin-top: 24px;
+    margin-bottom: 36px;
+    background-color: #E6E9EE;
+}
+
+.gray_box {
+    height: 150px;
+    width: 150px;
+    border: 1px solid #d9d9d9;
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.margin_left {
+    margin-left: 15px;
+}
+
+.margin_right {
+    margin-right: 15px; 
+}
+
+.margin_top {
+    margin-top: 10px;
+}
+
+.push_right {
+    margin-left: 25px;
+}
+
+.edit_btn {
+    margin-left: 123px;
+    margin-top: 5px;
+    color: #0011FF;
+}

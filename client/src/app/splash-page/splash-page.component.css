@@ -1,6 +1,29 @@
-.splash_background {
-  /* background-image: url('../assets/img/splash_bkgnd.jpg'); */
-  background-repeat: no-repeat;
-  background-size: contain;
+/*---UNIVERSAL---*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+img {
+  opacity: .40;
+  z-index: -1;
+  position: fixed;
 }
-/* // Error in here somewhere... */
+
+.splash_copy {
+  color: rgb(31, 34, 95);
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(230, 233, 238, .39);
+  text-align: center;
+  z-index: 5;
+  position: fixed;
+  font-weight: bold;
+  top: 50%;
+  left: 0;
+  margin: 15px;
+}
+
+button {
+  background-color: rgb(31, 34, 95);
+  border: 3px solid #FF0000;
+  color: #E6E9EE;
+  font-family: 'Montserrat', sans-serif;
+  margin: 5px;
+}
