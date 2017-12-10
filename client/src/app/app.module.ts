@@ -16,6 +16,7 @@ import { SettingsNavComponent } from './settings-nav/settings-nav.component';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { EditContactComponent } from './edit-contact/edit-contact.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
     HomepageComponent,
     HouseholdInfoComponent,
     SettingsNavComponent,
+    EditContactComponent,
   ],
   imports: [
     CommonModule,

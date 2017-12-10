@@ -41,24 +41,7 @@
         <img src="{{contact.image}}" alt="">
         <p class="normal_text margin_top">{{contact.firstName}}</p>
         <p class="normal_text">{{contact.phone}}</p>
-      </div>
-      <div class="col-sm-2 margin_right margin_left">
-        <div class="gray_box">.jpg</div>
-        <p class="normal_text margin_top">Jean-Luc Picard</p>
-        <p class="normal_text">622-170-1224</p>
-      </div>
-      <div class="col-sm-2 margin_right margin_left">
-        <div class="gray_box">.jpg</div>
-        <p class="normal_text margin_top">James T. Kirk</p>
-        <p class="normal_text">622-170-1023</p>
-      </div>
-      <div class="col-sm-2 margin_right margin_left">
-        <div class="gray_box">.jpg</div>
-        <p class="normal_text margin_top">Annika Hansen</p>
-        <p class="normal_text">709-333-0101</p>
-      </div>
-      <div>
-        <button type="button" class="btn btn-link btn-lg bold_text edit_btn">Edit</button>
+        <button type="button" class="btn btn-link btn-lg bold_text" (click)="edit()">Edit</button>
       </div>
     </div>
   </div>

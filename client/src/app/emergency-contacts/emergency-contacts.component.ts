@@ -21,8 +21,8 @@ export class EmergencyContactsComponent implements OnInit {
   contactsUrl: any;
   contacts: any = [];
   contact: any;
-  users_contacts: any;
-  contacts_array: any;
+  contact_id: any;
+  editContactUrl: string;
   allUserContactsUrl: string;
   token: string = localStorage.getItem('token');
   private headers: Headers = new Headers();
@@ -50,8 +50,8 @@ export class EmergencyContactsComponent implements OnInit {
       relationship: this.contactForm.get('relationship').value,
       image: this.contactForm.get('image').value,
       user: localStorage.getItem('id')
-      // user: this.contactForm.get('user').value
     };
+    console.log('image: ', contact.image);
     console.log('user: ', this.user);
     
       console.log(contact);
@@ -63,8 +63,6 @@ export class EmergencyContactsComponent implements OnInit {
           .set('Content-Type', 'application/json')
         })
       .subscribe(data => {
-      console.log('User logged in: ', data);
-      // Need to add user to this array too! 
       alert(`Contact named: ${contact.firstName} was added!`);
     });
   }
@@ -81,32 +79,36 @@ export class EmergencyContactsComponent implements OnInit {
         .set('Content-Type', 'application/json')
       })
     .subscribe(data => {
-
       console.log('data', data);
       for(let i of Object.keys(data)){
+        this.contact_id = data[i]._id;
         if(data[i].user === localStorage.getItem('id'))
         {
           this.count++;
+
           let temp = data[i];
           this.contacts.push(temp);
         }
-
       }
-      console.log('this.contacts', this.contacts);
-        // for(let j=0;j<this.count;j++)
-        // {
-        //    this.contact = this.contacts_array[j];
-        //    console.log('this.contact', this.contact);
-        // }
-      // this.contacts = data;
-      // this.contact = this.contacts[this.count];
       for(let i=0;i<this.count;i++)
       {
         this.contact = this.contacts[i];
+        this.contact_id = this.contacts[i].contact_id;
       }
-      // console.log(this.count);
       });
   }
+  edit(){
+    this.editContactUrl = `http://localhost:8080/api/contacts/${this.contact_id}`;
+    this.http.get(this.allUserContactsUrl,  
+      {
+        headers: new HttpHeaders() 
+        .set('authorization', localStorage.getItem('token')) 
+        .set('Content-Type', 'application/json')
+      })
+    .subscribe(data => {
+      
+  });
+}
   ngOnInit() {
     this.getContacts();
   }
