@@ -76,7 +76,7 @@ module.exports = (router) => {
                 res.json({ success: false, message: 'Invalid password.' });
               } else {
                 const token = jwt.sign({ userId: user._id, firstName: user.firstName }, config.secret, { expiresIn: '24h' });
-                res.json({ success: true, message: 'Logged in!', token });
+                res.json({ success: true, message: 'Logged in!', token, userId: user._id });
               }
             }
           }
