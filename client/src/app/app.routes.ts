@@ -18,6 +18,7 @@ const appRoutes: Routes = [
     { path: 'contacts-view', component: ContactsAdultViewComponent },
     { path: 'settings', component: SettingsComponent },
     { path: 'add-contacts', component: AddContactsComponent },
+    { path: 'register' , component: RegisterComponent },
     
 
 ];
