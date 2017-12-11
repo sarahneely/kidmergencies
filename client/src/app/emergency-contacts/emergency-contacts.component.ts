@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginComponent } from '../login/login.component';
+import { DialogService } from 'ng2-bootstrap-modal';
+import { EditContactComponent } from '../edit-contact/edit-contact.component';
 
 @Component({
   selector: 'app-emergency-contacts',
@@ -22,12 +24,12 @@ export class EmergencyContactsComponent implements OnInit {
   contacts: any = [];
   contact: any;
   contact_id: any;
-  editContactUrl: string;
   allUserContactsUrl: string;
+  editContactUrl: string;
   token: string = localStorage.getItem('token');
   private headers: Headers = new Headers();
   
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private login: LoginComponent) { 
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private login: LoginComponent, private dialogService:DialogService) { 
     this.createForm();
   }
 
@@ -56,7 +58,7 @@ export class EmergencyContactsComponent implements OnInit {
     
       console.log(contact);
       this.contactsUrl = "http://localhost:8080/api/contacts";
-      this.http.post(this.contactsUrl, contact, 
+      this.http.post(this.contactsUrl, contact,
         {
           headers: new HttpHeaders() 
           .set('authorization', localStorage.getItem('token')) 
@@ -85,7 +87,6 @@ export class EmergencyContactsComponent implements OnInit {
         if(data[i].user === localStorage.getItem('id'))
         {
           this.count++;
-
           let temp = data[i];
           this.contacts.push(temp);
         }
@@ -98,17 +99,23 @@ export class EmergencyContactsComponent implements OnInit {
       });
   }
   edit(){
+    // let disposable = this.dialogService.addDialog(EditContactComponent, { })    
     this.editContactUrl = `http://localhost:8080/api/contacts/${this.contact_id}`;
-    this.http.get(this.allUserContactsUrl,  
+    console.log("this.contact: ", this.contact);
+    this.http.put(this.editContactUrl, this.contact,
       {
         headers: new HttpHeaders() 
         .set('authorization', localStorage.getItem('token')) 
         .set('Content-Type', 'application/json')
       })
+    // .map(data => {
+    //   console.log('data in map: ', data);    
+    // })    
     .subscribe(data => {
-      
-  });
-}
+      console.log('data: ', data);
+    });
+  }
+
   ngOnInit() {
     this.getContacts();
   }

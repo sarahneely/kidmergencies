@@ -44,7 +44,8 @@ import { EditContactComponent } from './edit-contact/edit-contact.component';
     RoutingModule
   ],
   entryComponents: [
-    RegisterComponent
+    RegisterComponent, 
+    EditContactComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
