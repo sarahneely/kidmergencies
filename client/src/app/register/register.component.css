@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
+
+.bold_text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.normal_text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.register_background {
+    background-color: #D6EFFF;
+}
+
+.heading_text {
+    font-size: 6em;
+}
+
+.password_msg {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+    font-size: 1em;
+}
+
+.input_text {
+    font-size: 2em;
+}
+
+.white_text {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #E6E9EE;
+}
+
+button.btn.btn-primary.btn-lg {
+    color: #0011FF;
+    background-color: #ffffff;
+    border-color: #d9d9d9;
+}
