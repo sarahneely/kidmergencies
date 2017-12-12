@@ -5,57 +5,43 @@
     </div>
   </div>
   <div class="row input_background">
+    <form class="form-group" [formGroup]="contactForm" (submit)="onSubmit()">
     <div class="col-sm-4">
-      <label class="custom-file bold_text">
-        <input type="file" id="file1" class="custom-file-input normal_text" required>
-        <span class="custom-file-control"></span>
+      <label for="image" class="btn btn-secondary btn-file">Browse
+        <input type="file" id="image" class="custom-file-input normal_text" name="file" (change)="onFileChange($event)" required>
+        <!-- <span class="custom-file-control form-control"></span> -->
+        <input type="hidden" name="fileHidden" formControlName="image">
       </label>
     </div>
     <div class="col-sm-5">
       <div class="row">
-        <label for="inputFirstName" class="normal_text label_top">First Name</label>
-        <input type="text" class="form-control normal_text" id="firstName" placeholder="First Name" required>
+        <label for="firstName" class="normal_text label_top">First Name</label>
+        <input type="text" class="form-control normal_text" id="firstName" placeholder="First Name" name="firstName" formControlName="firstName" required>
       </div>
       <div class="row">
-        <label for="inputLastName" class="normal_text label_top">Last Name</label>
-        <input type="text" class="form-control normal_text" id="lastName" placeholder="Last Name" required>
+        <label for="lastName" class="normal_text label_top">Last Name</label>
+        <input type="text" class="form-control normal_text" id="lastName" placeholder="Last Name" name="lastName" formControlName="lastName" required>
       </div>
       <div class="row">
-        <label for="inputPhone" class="label_top normal_text">Mobile Phone Number</label>
-        <input type="text" class="form-control normal_text" id="phoneNumber" placeholder="(555) 555-5555" required>
+        <label for="phone" class="label_top normal_text">Mobile Phone Number</label>
+        <input type="text" class="form-control normal_text" id="phoneNumber" placeholder="(555) 555-5555" name="phone" formControlName="phone" required>
       </div>
       <div class="row">
-        <label for="inputRelationship" class="label_top normal_text">Relationship</label>
-        <input type="text" class="form-control normal_text" id="relationship" placeholder="Relationship" required>
+        <label for="relationship" class="label_top normal_text">Relationship</label>
+        <input type="text" class="form-control normal_text" id="relationship" placeholder="Relationship" name="relationship" formControlName="relationship" required>
       </div>
     </div>
     <div class="col-sm-2">
       <button class="btn btn-primary button_margin bold_text btn-lg" type="submit">Submit</button>
     </div>
+  </form>
     <div class="col-sm-12 gray_line"></div>
     <div class="row push_right">
-      <div class="col-sm-2 margin_right margin_left">
-        <div class="gray_box">.jpg</div>
-        <p class="normal_text margin_top">Kathryn Janeway</p>
-        <p class="normal_text">622-746-5624</p>
-      </div>
-      <div class="col-sm-2 margin_right margin_left">
-        <div class="gray_box">.jpg</div>
-        <p class="normal_text margin_top">Jean-Luc Picard</p>
-        <p class="normal_text">622-170-1224</p>
-      </div>
-      <div class="col-sm-2 margin_right margin_left">
-        <div class="gray_box">.jpg</div>
-        <p class="normal_text margin_top">James T. Kirk</p>
-        <p class="normal_text">622-170-1023</p>
-      </div>
-      <div class="col-sm-2 margin_right margin_left">
-        <div class="gray_box">.jpg</div>
-        <p class="normal_text margin_top">Annika Hansen</p>
-        <p class="normal_text">709-333-0101</p>
-      </div>
-      <div>
-        <button type="button" class="btn btn-link btn-lg bold_text edit_btn">Edit</button>
+      <div class="col-sm-2 margin_right margin_left" *ngFor="let contact of contacts">
+        <img src="{{contact.image}}" alt="">
+        <p class="normal_text margin_top">{{contact.firstName}}</p>
+        <p class="normal_text">{{contact.phone}}</p>
+        <button type="button" class="btn btn-link btn-lg bold_text" (click)="edit()">Edit</button>
       </div>
     </div>
   </div>
