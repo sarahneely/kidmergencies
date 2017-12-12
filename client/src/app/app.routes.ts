@@ -8,18 +8,20 @@ import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult
 import { HouseholdInfoComponent } from './household-info/household-info.component';
 import { SettingsComponent } from './settings/settings.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { KidViewComponent } from './kid-view/kid-view.component';
+
 
 
 const appRoutes: Routes = [
     { path: '', component: SplashPageComponent },
-    { path: 'home', component: HomepageComponent },
+    { path: 'kid-view', component: KidViewComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'contacts-view', component: ContactsAdultViewComponent },
     { path: 'settings', component: SettingsComponent },
     { path: 'emergency-contacts', component: EmergencyContactsComponent },
     { path: 'household-info', component: HouseholdInfoComponent },
-];
+    
 
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],
