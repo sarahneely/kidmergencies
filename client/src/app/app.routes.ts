@@ -17,15 +17,8 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'contacts-view', component: ContactsAdultViewComponent },
     { path: 'settings', component: SettingsComponent },
-<<<<<<< HEAD
-    { path: 'add-contacts', component: AddContactsComponent },
-    { path: 'register' , component: RegisterComponent },
-    
-
-=======
     { path: 'emergency-contacts', component: EmergencyContactsComponent },
     { path: 'household-info', component: HouseholdInfoComponent },
->>>>>>> 4d9b7628362ece29bc6072b7ab4daa739db3a2b4
 ];
 
 @NgModule({
