@@ -6,35 +6,42 @@
   </div>
   <div class="row input_background">
     <form class="form-group" [formGroup]="contactForm" (submit)="onSubmit()">
-    <div class="col-sm-4">
-      <label for="image" class="btn btn-secondary btn-file">Browse
-        <input type="file" id="image" class="custom-file-input normal_text" name="file" (change)="onFileChange($event)" required>
-        <!-- <span class="custom-file-control form-control"></span> -->
-        <input type="hidden" name="fileHidden" formControlName="image">
-      </label>
-    </div>
-    <div class="col-sm-5">
       <div class="row">
-        <label for="firstName" class="normal_text label_top">First Name</label>
-        <input type="text" class="form-control normal_text" id="firstName" placeholder="First Name" name="firstName" formControlName="firstName" required>
+        <div class="col-sm-3">
+          <label for="image" class="btn btn-secondary btn-file">Browse
+            <input type="file" id="image" class="custom-file-input normal_text" name="file" (change)="onFileChange($event)" required>
+            <!-- <span class="custom-file-control form-control"></span> -->
+            <input type="hidden" name="fileHidden" formControlName="image">
+          </label>
+        </div>
+        <div class="col-sm-5">
+          <div class="row">
+            <label for="firstName" class="normal_text label_top">First Name</label>
+            <input type="text" class="form-control normal_text" id="firstName" placeholder="First Name" name="firstName" formControlName="firstName"
+              required>
+          </div>
+          <div class="row">
+            <label for="lastName" class="normal_text label_top">Last Name</label>
+            <input type="text" class="form-control normal_text" id="lastName" placeholder="Last Name" name="lastName" formControlName="lastName"
+              required>
+          </div>
+          <div class="row">
+            <label for="phone" class="label_top normal_text">Mobile Phone Number</label>
+            <input type="text" class="form-control normal_text" id="phoneNumber" placeholder="(555) 555-5555" name="phone" formControlName="phone"
+              required>
+          </div>
+          <div class="row">
+            <label for="relationship" class="label_top normal_text">Relationship</label>
+            <input type="text" class="form-control normal_text" id="relationship" placeholder="Relationship" name="relationship" formControlName="relationship"
+              required>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <button class="btn btn-primary button_margin bold_text btn-lg" type="submit">Submit</button>
+        </div>
       </div>
-      <div class="row">
-        <label for="lastName" class="normal_text label_top">Last Name</label>
-        <input type="text" class="form-control normal_text" id="lastName" placeholder="Last Name" name="lastName" formControlName="lastName" required>
-      </div>
-      <div class="row">
-        <label for="phone" class="label_top normal_text">Mobile Phone Number</label>
-        <input type="text" class="form-control normal_text" id="phoneNumber" placeholder="(555) 555-5555" name="phone" formControlName="phone" required>
-      </div>
-      <div class="row">
-        <label for="relationship" class="label_top normal_text">Relationship</label>
-        <input type="text" class="form-control normal_text" id="relationship" placeholder="Relationship" name="relationship" formControlName="relationship" required>
-      </div>
-    </div>
-    <div class="col-sm-2">
-      <button class="btn btn-primary button_margin bold_text btn-lg" type="submit">Submit</button>
-    </div>
-  </form>
+    
+    </form>
     <div class="col-sm-12 gray_line"></div>
     <div class="row push_right">
       <div class="col-sm-2 margin_right margin_left" *ngFor="let contact of contacts">
