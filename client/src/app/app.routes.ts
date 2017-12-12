@@ -20,8 +20,7 @@ const appRoutes: Routes = [
     { path: 'settings', component: SettingsComponent },
     { path: 'emergency-contacts', component: EmergencyContactsComponent },
     { path: 'household-info', component: HouseholdInfoComponent },
-    
-
+    ];
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule]
