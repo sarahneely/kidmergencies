@@ -7,7 +7,6 @@ import { EmergencyContactsComponent } from './emergency-contacts/emergency-conta
 import { ContactsAdultViewComponent } from './contacts-adult-view/contacts-adult-view.component';
 import { HouseholdInfoComponent } from './household-info/household-info.component';
 import { SettingsComponent } from './settings/settings.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { KidViewComponent } from './kid-view/kid-view.component';
 
 
