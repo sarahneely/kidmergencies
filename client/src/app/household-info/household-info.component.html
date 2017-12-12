@@ -4,4 +4,50 @@
       <h1 class="text-center">Household Info</h1>
     </div>
   </div>
+  <form class="" []="" (submit)="onSubmit()">
+    <div class="col-md-12">
+      <!-- ADULT FORM-GROUPING -->
+      <div class="row adult-form-group">
+        <h3>Living In Home Adult</h3>
+        <label for="livingInHomeAdult">Name</label>
+        <input type="text" name="adultName" id="" aria-placeholder="First and Last Name">
+        <!-- AGE -->
+        <label for="age">Age</label>
+        <input type="number" name="adultAge" id="">
+        <!-- RELATIONSHIP -->
+        <label for="relationship">Relationship</label>
+        <input type="text" name="relationshipAdult" id="">
+        <div class="row">
+          <label for="medicalIssues">Known Medical Issues</label>
+          <input type="text" name="medicalIssuesAdult" id="">
+        </div>
+        <div class="row">
+          <label for="allergies">Allergies</label>
+          <input type="text" name="allergiesAdult" id="">
+        </div>
+        <span class="add-adult pull-right">+</span>
+      </div>
+      <!-- END of ADULT FORM-GROUPING -->
+
+      <!-- CHILD FORM-GROUPING -->
+      <div class="row child-form-group">
+        <h3>Child</h3>
+        <label for="livingAtHomeChild">Name</label>
+        <input type="text" name="childName" id="">
+        <label for="age">Age</label>
+        <input type="number" name="childAge" id="">
+        <label for="relationship">Relationship</label>
+        <input type="text" name="childRelationship" id="">
+        <div class="row">
+          <label for="medicalIssues">Known Medical Issue</label>
+          <input type="text" name="medicalIssuesChild" id="">
+        </div>
+        <div class="row">
+          <label for="allergies">Allergies</label>
+          <input type="text" name="allergiesChild" id="">
+        </div>
+        <span class="add-adult pull-right">+</span>
+      </div>
+    </div>
+  </form>
 </div>
