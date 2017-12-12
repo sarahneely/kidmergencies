@@ -17,6 +17,7 @@ import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
+import { KidViewComponent } from './kid-view/kid-view.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EditContactComponent } from './edit-contact/edit-contact.component';
     HouseholdInfoComponent,
     SettingsNavComponent,
     EditContactComponent,
+    KidViewComponent
   ],
   imports: [
     CommonModule,
