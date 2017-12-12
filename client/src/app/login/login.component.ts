@@ -40,7 +40,7 @@ form;
     console.log('data[`userId`]', data['userId']);
     this.storeId('id', data['userId']);
     if (this.isLoggedIn()) {
-      this.router.navigateByUrl(`/home`);
+      this.router.navigateByUrl(`/kid-view`);
     }
     // this.USER = data;
     // this.id = USER.id;
