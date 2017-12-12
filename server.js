@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+// const multer = require('multer');
 const router = express.Router();
 const app = express();
 const mongoose = require('mongoose');
@@ -11,7 +12,6 @@ const bodyParser = require('body-parser');
 const users = require('./routes/users')(router);
 const households = require('./routes/households')(router);
 const contacts = require('./routes/contacts')(router);
-// const cors = require('cors');
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json());
@@ -32,7 +32,13 @@ app.set('superSecret', config.secret);
 // Middleware
 app.use(cors({
   origin: 'http://localhost:4200'
-}))
+}));
+
+// app.use(multer({ dest: './uploads/',
+//   rename: function (fieldname, filename) {
+//     return filename;
+//   },
+//  }));
 
 // app.use(express.static(__dirname + '/dist'));
 

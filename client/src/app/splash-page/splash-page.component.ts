@@ -33,6 +33,8 @@ register() {
   //   //   });
   // }
 login(){
+  localStorage.removeItem('token');
+  localStorage.removeItem('id');
   let disposable = this.dialogService.addDialog(LoginComponent, { })  
 }
 
