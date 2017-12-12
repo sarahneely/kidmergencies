@@ -88,7 +88,7 @@ isLoggedIn(){
   return this.loggedIn;
 }
 
-confirm(){
+confirm() {
   this.result = true;
   this.close();
 }
