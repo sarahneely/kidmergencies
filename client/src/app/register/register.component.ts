@@ -79,7 +79,6 @@ export class RegisterComponent extends DialogComponent<RegisterModel, boolean> i
 
     });
  }
-<<<<<<< HEAD
 
  storeToken(name: string, token: string) {
   localStorage.setItem(name, token);
@@ -89,10 +88,7 @@ isLoggedIn(){
   return this.loggedIn;
 }
 
-confirm(){
-=======
 confirm() {
->>>>>>> 4d9b7628362ece29bc6072b7ab4daa739db3a2b4
   this.result = true;
   this.close();
 }
