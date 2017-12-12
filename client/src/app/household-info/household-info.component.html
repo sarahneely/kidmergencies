@@ -1,53 +1,57 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-12">
-      <h1 class="text-center">Household Info</h1>
-    </div>
+    <h1 class="main_head text-center">Household Settings</h1>
   </div>
-  <form >
-    <div class="col-md-12">
-      <!-- ADULT FORM-GROUPING -->
-      <div class="row adult-form-group">
-        <h3>Living In Home Adult</h3>
-        <label for="livingInHomeAdult">Name</label>
-        <input type="text" name="adultName" id="" aria-placeholder="First and Last Name">
-        <!-- AGE -->
-        <label for="age">Age</label>
-        <input type="number" name="adultAge" id="">
-        <!-- RELATIONSHIP -->
-        <label for="relationship">Relationship</label>
-        <input type="text" name="relationshipAdult" id="">
-        <div class="row">
-          <label for="medicalIssues">Known Medical Issues</label>
-          <input type="text" name="medicalIssuesAdult" id="">
-        </div>
-        <div class="row">
-          <label for="allergies">Allergies</label>
-          <input type="text" name="allergiesAdult" id="">
-        </div>
-        <span class="add-adult pull-right">+</span>
-      </div>
-      <!-- END of ADULT FORM-GROUPING -->
+  <div class="col-md-12 main__wrapper">
+    <!--ADULT FORM GROUP SECTION-->
+    <form class="form-group">
+      <div class="col-md-12">
+        <h4 class="text-left">Living In<br>Home Adult</h4>
 
-      <!-- CHILD FORM-GROUPING -->
-      <div class="row child-form-group">
-        <h3>Child</h3>
-        <label for="livingAtHomeChild">Name</label>
-        <input type="text" name="childName" id="">
-        <label for="age">Age</label>
-        <input type="number" name="childAge" id="">
-        <label for="relationship">Relationship</label>
-        <input type="text" name="childRelationship" id="">
+        <!--ADULT name -->
+        <label for="adultName" class="label_title margin_left pad">Name:</label>
+        <input type="text" class="" name="adultName" id="" aria-placeholder="First and Last Name">
+        <!--ADULT age -->
+        <label for="adultAge" class="label_title pad">Age:</label>
+        <input type="number" class="short_input " name="adultAge" id="" aria-placeholder="25">
+        <!--ADULT relationship -->
+        <label for="adultRelationship"class="label_title pad">Relationship:</label>
+        <input type="text" class="" name="adultRelationship" id="" aria-placeholder="Relationship">
+
         <div class="row">
-          <label for="medicalIssues">Known Medical Issue</label>
-          <input type="text" name="medicalIssuesChild" id="">
+          <label for="adultMedicalIssues" class="label_title pad">Known Medical Issues:</label>
+          <input type="text" class="form-control" name="adultMedicalIssues" id="" aria-placeholder="Known Medical Issues">
         </div>
         <div class="row">
-          <label for="allergies">Allergies</label>
-          <input type="text" name="allergiesChild" id="">
+          <label for="adultAllergies" class="label_title pad">Allergies:</label>
+          <input type="text" class="form-control" name="adultAllergies" id="" aria-placeholder="Allergies">
+          <span><i class="fa fa-plus" aria-hidden="true"></i></span>
         </div>
-        <span class="add-adult pull-right">+</span>
+
+        <div class="space"></div>
+
+        <h4 class="text-left">Child</h4>
+        <!--CHILD name -->
+        <label for="childName" class="label_title margin_left pad">Name:</label>
+        <input type="text" class= "" name="childName" id="" aria-placeholder="First and Last Name">
+        <!--CHILD age -->
+        <label for="childAge" class="label_title pad">Age:</label>
+        <input type="number" class="short_input" name="childAge" id="" aria-placeholder="5">
+        <!--CHILD relationship -->
+        <label for="adultRelationship"class="label_title pad">Relationship:</label>
+        <input type="text" class= "" name="childRelationship" id="" aria-placeholder="Relationship">
+
+        <div class="row">
+          <label for="childMedicalIssues" class="label_title pad">Known Medical Issues:</label>
+          <input type="text" class="form-control" name="childMedicalIssues" id="" aria-placeholder="Known Medical Issues">
+        </div>
+        <div class="row">
+          <label for="childAllergies" class="label_title pad">Allergies:</label>
+          <input type="text" class="form-control" name="childAllergies" id="" aria-placeholder="Allergies">
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
+
+
