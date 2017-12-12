@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup} from '@angular/forms';
 import { DialogComponent, DialogService } from 'ng2-bootstrap-modal';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 export interface RegisterModel {
   email: string;
@@ -31,8 +32,9 @@ export class RegisterComponent extends DialogComponent<RegisterModel, boolean> i
   confirmPassword: string;
   registerForm;
   registerUrl;
+  loggedIn: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, dialogService: DialogService, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, dialogService: DialogService, private http: HttpClient, private router:Router) {
     super(dialogService);
     this.createForm();
    }
@@ -69,9 +71,23 @@ export class RegisterComponent extends DialogComponent<RegisterModel, boolean> i
     this.registerUrl = 'http://localhost:8080/api/register';
     this.http.post(this.registerUrl, user)
     .subscribe(data => {
+      
+      if (this.isLoggedIn()) {
+        this.router.navigateByUrl(`/settings`);
+      }
     console.log('User logged in: ', data);
+
     });
  }
+
+ storeToken(name: string, token: string) {
+  localStorage.setItem(name, token);
+}
+isLoggedIn(){
+  this.loggedIn = localStorage.getItem('token') !== null;
+  return this.loggedIn;
+}
+
 confirm() {
   this.result = true;
   this.close();
