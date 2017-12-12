@@ -5,30 +5,22 @@
 }
 .wrapper {
 	background: #5056F3;
+	padding: 20px;
 	opacity: 79%;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(6, minmax(100px, auto));
+	margin: 0 auto;
+	height: auto;
 	font-family: 'Montserrat', sans-serif;
 }
 
-#section-a {
-	grid-column: 1 / span 4;
-	grid-row: 2 / span 3;
-	justify-self: center;
-}
-
 #section-b {
-	grid-column: 1 / span 4;
-	grid-row: 5 / span 6;
-	justify-self: center;
+	align-items: center;
 }
 
 .btn {
 	background: #FF2300;
 	color: #fff;
 	border: 3px solid #fff;
-	width: 500px;
+	width: 450px;
 	height: 140px;
 }
 
@@ -41,9 +33,12 @@
 	text-align: center;
 }
 .space li { 
-	padding:8px;
+	display: inline-block;
+	padding: 2px;
 }
 
-ul > li {
-	display: inline-block;
+.center {
+	text-align: center;
+	margin: 0 auto;
 }
+
