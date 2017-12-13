@@ -1,23 +1,27 @@
 <div class="modal-dialog">
-  <div class="modal-content">
+  <div class="modal-content m_auto" id="modal__content">
     <div class="modal-header">
-      <h4 class="modal-title">Log In</h4>        
+      <h4 class="modal-title m_auto" id="main_title">Log In</h4>        
       <button type="button" class="close" (click)="close()">&times;</button>
       </div>
+      
     <div class="modal-body">
       <form 
       [formGroup]="form"
       (ngSubmit)="onSubmit(form.value)">
-          <label for="name">Username: </label>
+        
+          <label for="name" class="label_head">Username:</label>
           <input type="email" id="email" required class="form-control"       
            name="name"
           formControlName="email">
-          <label for="password">Password: </label>
+        
+          <label for="password" class="label_head">Password:</label>
           <input type="password" id="password" required class="form-control"       
-           name="password"
+          name="password"
           formControlName="password">
+        
         <br>
-        <button class="centered" type="submit" class="btn btn-success">Login</button>
+        <button class="centered" type="submit" class="btn pull-right" id="button_submit">Login</button>
       </form>
     </div>
   </div>
