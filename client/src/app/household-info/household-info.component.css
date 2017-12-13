@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
+
+h4 {
+    margin-bottom: 10px;
+}
+
+.main_head_background {
+    border: 3px solid #E6E9EE;
+    padding: 20px;
+}
+
+.main_head {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6em;
+    color: #6F73EF;
+    text-align: center;
+}
+.pad {
+    padding: 5px 10px;
+}
+.main__wrapper {
+    font-family: 'Montserrat', sans-serif;
+    background: #D6EFFF;
+    padding: 20px;
+}
+
+.label_title {
+    font-weight: 400;
+}
+
+.short_input {
+    width: 50px;
+}
+
+.space {
+    margin-bottom: 60px;
+}
+
+.margin_left {
+    margin-left: 0px;
+}
+
+.m_auto {
+    margin: 0 auto;
+}
+
+.nighty_input {
+    width: 90%;
+}
+
+.plus_icon {
+    color: #fff;
+} 
+
+.greybox {
+    background: #E6E9EE;
+    opacity: 0.5;
+    border: 3px solid rgb(189, 189, 189);
+    margin: 10px;
+}
+
+.greybox > p {
+    text-align: center;
+    word-spacing: 3px;
+}
+
+#home_icon {
+    color: rgb(141, 141, 141);
+}
+
+#continue_link {
+    color: #0011FF;
+    font-weight: 700;
+    text-transform: capitalize;
+    border: 2px solid rgb(141, 141, 141);
+}
+
+#edit_link {
+    font-weight: 700;
+    align-items: right;
+}
+

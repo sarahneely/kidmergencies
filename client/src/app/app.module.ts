@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
 import { KidViewComponent } from './kid-view/kid-view.component';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { KidViewComponent } from './kid-view/kid-view.component';
     ReactiveFormsModule,
     BootstrapModalModule,
     HttpClientModule,
-
+    Angular2FontawesomeModule,
     // ROUTING MODULE SHOULD BE LAST
     RoutingModule
   ],
