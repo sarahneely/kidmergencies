@@ -29,7 +29,7 @@ nav {
 .btn {
 	background: #FF2300;
 	color: #fff;
-	border: 3px solid #fff;
+	/* border: 3px solid #fff; */
 	width: 450px;
 	height: 150px;
 }
