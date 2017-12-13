@@ -106,6 +106,10 @@ export class EmergencyContactsComponent implements OnInit {
           {
             data[i].image = '../assets/img/contacts/14925344_559639187565409_1500009632060988365_n.jpg';
           }
+          if(data[i].lastName == "Espinoza" && data[i].firstName == "Yvette")
+          {
+            data[i].image = '../assets/img/contacts/14925344_559639187565409_1500009632060988365_n.jpg';            
+          }
         }
       }
       for(let i=0;i<this.count;i++)
