@@ -70,6 +70,7 @@ h4 {
 
 #continue_link {
     color: #0011FF;
+    background-color: #fff;
     font-weight: 700;
     text-transform: capitalize;
     border: 2px solid rgb(141, 141, 141);
