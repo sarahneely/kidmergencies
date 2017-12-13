@@ -98,9 +98,13 @@ export class EmergencyContactsComponent implements OnInit {
           {
             data[i].image = '../assets/img/contacts/lee_jun_ki_.jpg';
           }
-          if(data[i].lastName == "Espinoza")
+          if(data[i].lastName == "Espinoza" && data[i].firstName == "Maria")
           {
             data[i].image = '../assets/img/contacts/20130921_173601.jpg';            
+          }
+          if(data[i].lastName == "Espinoza" && data[i].firstName == "Maryam")
+          {
+            data[i].image = '../assets/img/contacts/14925344_559639187565409_1500009632060988365_n.jpg';
           }
         }
       }
