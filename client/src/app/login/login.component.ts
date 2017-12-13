@@ -39,13 +39,11 @@ form;
     this.storeToken('token', data['token']);
     console.log('data[`userId`]', data['userId']);
     this.storeId('id', data['userId']);
-    if (this.isLoggedIn()) {
+    console.log(data['success']);
+    if (this.isLoggedIn() || data['success']== "true") {
       this.router.navigateByUrl(`/kid-view`);
     }
-    // this.USER = data;
-    // this.id = USER.id;
     });
-    // this.user_email = this.user.email;
   }
   storeToken(name: string, token: string) {
     localStorage.setItem(name, token);
@@ -54,8 +52,10 @@ form;
     localStorage.setItem(name, id);
   }
   isLoggedIn(){
-    this.loggedIn = localStorage.getItem('token') !== null;
+    this.loggedIn = localStorage.getItem('token') !== undefined && localStorage.getItem('token') !== null;
+    console.log(this.loggedIn);
     return this.loggedIn;
+    
   }
   ngOnInit() {
     this.form = new FormGroup({

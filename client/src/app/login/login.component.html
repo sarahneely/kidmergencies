@@ -19,9 +19,8 @@
           <input type="password" id="password" required class="form-group"       
           name="password"
           formControlName="password">
-        
         <br>
-        <button class="centered" type="submit" class="btn pull-right" id="button_submit">Login</button>
+        <button class="centered" type="submit" class="btn pull-right" data-dismiss="modal" id="button_submit" (click)="close()">Login</button>
       </form>
     </div>
   </div>

@@ -67,7 +67,7 @@ export class EmergencyContactsComponent implements OnInit {
       .subscribe(data => {
       alert(`Contact named: ${contact.firstName} was added!`);
     });
-    // this.getContacts();
+    this.getContacts();
   }
   onFileChange($event){
     let file = $event.target.files[0];
@@ -116,7 +116,6 @@ export class EmergencyContactsComponent implements OnInit {
       });
   }
   edit(){
-    // let disposable = this.dialogService.addDialog(EditContactComponent, { })    
     this.editContactUrl = `http://localhost:8080/api/contacts/${this.contact_id}`;
     console.log("this.contact: ", this.contact);
     this.http.put(this.editContactUrl, this.contact,
