@@ -67,6 +67,7 @@ export class EmergencyContactsComponent implements OnInit {
       .subscribe(data => {
       alert(`Contact named: ${contact.firstName} was added!`);
     });
+    // this.getContacts();
   }
   onFileChange($event){
     let file = $event.target.files[0];
@@ -89,6 +90,18 @@ export class EmergencyContactsComponent implements OnInit {
           this.count++;
           let temp = data[i];
           this.contacts.push(temp);
+          if(data[i].lastName == "Choi")
+          {
+            data[i].image = '../assets/img/contacts/Choi-Jin-hyuk5.jpg';
+          }
+          if(data[i].lastName == "Lee" && data[i].firstName == "Jun Ki")
+          {
+            data[i].image = '../assets/img/contacts/lee_jun_ki_.jpg';
+          }
+          if(data[i].lastName == "Espinoza")
+          {
+            data[i].image = '../assets/img/contacts/20130921_173601.jpg';            
+          }
         }
       }
       for(let i=0;i<this.count;i++)
