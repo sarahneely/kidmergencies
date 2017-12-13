@@ -84,7 +84,7 @@ export class RegisterComponent extends DialogComponent<RegisterModel, boolean> i
   localStorage.setItem(name, token);
 }
 isLoggedIn(){
-  this.loggedIn = localStorage.getItem('token') !== null;
+  this.loggedIn = localStorage.getItem('token') !== undefined;
   return this.loggedIn;
 }
 

@@ -67,6 +67,7 @@ export class EmergencyContactsComponent implements OnInit {
       .subscribe(data => {
       alert(`Contact named: ${contact.firstName} was added!`);
     });
+    this.getContacts();
   }
   onFileChange($event){
     let file = $event.target.files[0];
@@ -89,6 +90,26 @@ export class EmergencyContactsComponent implements OnInit {
           this.count++;
           let temp = data[i];
           this.contacts.push(temp);
+          if(data[i].lastName == "Choi")
+          {
+            data[i].image = '../assets/img/contacts/Choi-Jin-hyuk5.jpg';
+          }
+          if(data[i].lastName == "Lee" && data[i].firstName == "Jun Ki")
+          {
+            data[i].image = '../assets/img/contacts/lee_jun_ki_.jpg';
+          }
+          if(data[i].lastName == "Espinoza" && data[i].firstName == "Maria")
+          {
+            data[i].image = '../assets/img/contacts/20130921_173601.jpg';            
+          }
+          if(data[i].lastName == "Espinoza" && data[i].firstName == "Maryam")
+          {
+            data[i].image = '../assets/img/contacts/14925344_559639187565409_1500009632060988365_n.jpg';
+          }
+          if(data[i].lastName == "Espinoza" && data[i].firstName == "Yvette")
+          {
+            data[i].image = '../assets/img/contacts/14925344_559639187565409_1500009632060988365_n.jpg';            
+          }
         }
       }
       for(let i=0;i<this.count;i++)
@@ -99,7 +120,6 @@ export class EmergencyContactsComponent implements OnInit {
       });
   }
   edit(){
-    // let disposable = this.dialogService.addDialog(EditContactComponent, { })    
     this.editContactUrl = `http://localhost:8080/api/contacts/${this.contact_id}`;
     console.log("this.contact: ", this.contact);
     this.http.put(this.editContactUrl, this.contact,

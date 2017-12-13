@@ -1,7 +1,115 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1 class="text-center">Household Info</h1>
+<div class="container-fluid m_auto">
+  <div class="row main_head_background">
+    <h1 class="main_head text-center">Household Settings</h1>
+  </div>
+  <div class="col-md-12 main__wrapper m_auto">
+    <!--START of FORM SECTION-->
+    <form class="form-group mobile_view">
+      <div class="col-md-12">
+        <!--ADULT GROUP SECTION-->
+        <h4 class="text-left">Living In<br>Home Adult</h4>
+        <div class="row">
+          <!--ADULT name -->
+          <label for="adultName" class="label_title margin_left pad">Name:</label>
+          <input type="text" class="" name="adultName" id="" aria-placeholder="First and Last Name">
+          <!--ADULT age -->
+          <label for="adultAge" class="label_title pad">Age:</label>
+          <input type="number" class="short_input " name="adultAge" id="" aria-placeholder="25">
+          <!--ADULT relationship -->
+          <label for="adultRelationship"class="label_title pad">Relationship:</label>
+          <input type="text" class="" name="adultRelationship" id="" aria-placeholder="Relationship">
+        </div>
+        <!--ADULT Medical Issues -->
+        <div class="row nighty_input">
+          <label for="adultMedicalIssues" class="label_title pad">Known Medical Issues:</label>
+          <input type="text" class="form-control" name="adultMedicalIssues" id="" aria-placeholder="Known Medical Issues">
+        </div>
+        <!--ADULT Allergies -->
+        <div class="row nighty_input">
+          <label for="adultAllergies" class="label_title pad">Allergies:</label>
+          <input type="text" class="form-control" name="adultAllergies" id="" aria-placeholder="Allergies">
+        </div>
+        <!--IM COMMENTING OUT THE LINK PART just to show you how it would have been if the form would have
+          connected with the plus signs <a href="add_to_adult_greybox"> -->
+        <span class="pull-right plus_icon"><i class="fa fa-plus fa-3x" aria-hidden="true"></i></span> <!-- </a>
+        <!-- SPACE / GAP -->
+        <div class="space"></div>
+        
+        <!--CHILD GROUP SECTION -->
+        <h4 class="text-left">Child</h4>
+        <div class="row">
+            <!--CHILD name -->
+          <label for="childName" class="label_title margin_left pad">Name:</label>
+          <input type="text" class= "" name="childName" id="" aria-placeholder="First and Last Name">
+          <!--CHILD age -->
+          <label for="childAge" class="label_title pad">Age:</label>
+          <input type="number" class="short_input" name="childAge" id="" aria-placeholder="5">
+          <!--CHILD relationship -->
+          <label for="adultRelationship"class="label_title pad">Relationship:</label>
+          <input type="text" class= "" name="childRelationship" id="" aria-placeholder="Relationship">
+        </div>
+        <!--CHILD medical issues -->
+        <div class="row nighty_input">
+          <label for="childMedicalIssues" class="label_title pad">Known Medical Issues:</label>
+          <input type="text" class="form-control" name="childMedicalIssues" id="" aria-placeholder="Known Medical Issues">
+        </div>
+        <!--CHILD allergies -->
+        <div class="row nighty_input">
+          <label for="childAllergies" class="label_title pad">Allergies:</label>
+          <input type="text" class="form-control" name="childAllergies" id="" aria-placeholder="Allergies">
+        </div>
+        <!--IM COMMENTING OUT THE LINK PART just to show you how it would have been if the form would have
+          connected with the plus signs <a href="add_to_child_greybox"> -->
+            <span class="pull-right plus_icon"><i class="fa fa-plus fa-3x" aria-hidden="true"></i></span>
+        <!-- /a> -->
+      </div>
+    </form>
+    <!-- END OF FORM SECTION FOR ADULT and CHILD -->
+    <div class="space"></div>
+    <hr>
+    <!-- START of RESULTS from FORM above -->
+    <div class="row">
+      <a href="#" id="edit_link">Edit</a>
+      <!-- IDEALLY the greyboxes mentioned in these sections was originally "adult_greybox" and "child_greybox"
+        which would have again, connected from the plus sign links above to result where these sections are. this is here just to
+        give an idea what it could have looked like or if you would like to fix it. just a thought -->
+
+      <!--ADULT RESULT SECTION -->
+      <div class="col-sm-12 col-md-5">
+        <h4>Adult</h4>
+        <div class="greybox">
+          <p>John Doe 36 Father</p>
+          <p>Medical - None, Allergies - none</p>
+        </div>
+        <div class="greybox">
+          <p>Jane Doe 34 Mother</p>
+          <p>Medical - none, Allergies - Peanuts</p>
+        </div>
+        <div class="greybox">
+          <p>Janet Doe 68 Grandmother</p>
+          <p>Medical - Heart, Allergies - Peanuts</p>
+        </div>
+      </div>
+      <!-- CHILD RESULT SECTION -->
+      <div class="col-sm-12 col-md-5">
+        <h4>Child</h4>
+        <div class="greybox">
+          <p>Jimmy Doe 8 Son</p>
+          <p>Medical - None, Allergies - Peanuts</p>
+        </div>
+        <div class="greybox">
+          <p>Jenny Doe 5 Daughter</p>
+          <p>Medical - none, Allergies - None</p>
+        </div>
+        <div class="pull-right pad space">
+            <a routerLink="/emergency-contacts" routerLinkActive="active"><button id="continue_link">continue</button></a>
+            <a routerLink="/kid-view" routerLinkActive="active" id="home_icon"><i class="fa fa-home fa-3x" aria-hidden="true"></i></a>
+        </div>
+      </div>
     </div>
+    <!-- END of RESULTS from FORM above -->
+    
   </div>
 </div>
+
+

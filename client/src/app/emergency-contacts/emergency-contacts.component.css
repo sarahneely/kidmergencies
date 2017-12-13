@@ -85,3 +85,10 @@ button.btn.btn-primary.button_margin {
     margin-top: 5px;
     color: #0011FF;
 }
+img{
+    height: 150px;
+    width: 150px;
+}
+#home_icon {
+    color: rgb(141, 141, 141);
+}
