@@ -1,15 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800,900');
 
-.body-background {
-	background-color: #D6EFFF;
-}
-.wrapper {
+#body_style {
 	background: #5056F3;
+	margin: 0 auto;
 	padding: 20px;
 	opacity: 79%;
-	margin: 0 auto;
-	height: auto;
 	font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+	width: 95%;
+	background-color: #E6E9EE;
+	padding: 0px;
+	margin-left: 7px;
+}
+
+#settings_link {
+	font-size: 3em;
+	font-weight: 800;
+	color: rgb(153, 153, 153);
+	margin-top: 100px;
 }
 
 #section-b {
@@ -21,14 +31,13 @@
 	color: #fff;
 	border: 3px solid #fff;
 	width: 450px;
-	height: 140px;
+	height: 150px;
 }
 
 .nine-one-one {
-	font-size: 90px;
+	font-size: 6em;
 	font-weight: 900;
-	margin: 0;
-	padding: 0.5em;
+	margin-top: 50px;
 	letter-spacing: 2px;
 	text-align: center;
 }
@@ -39,6 +48,13 @@
 
 .center {
 	text-align: center;
-	margin: 0 auto;
 }
 
+.logo_img {
+	height: 150px;
+	width: 200px;
+}
+
+.m_bottom {
+	padding-bottom: 50px;
+}
