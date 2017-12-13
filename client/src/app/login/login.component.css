@@ -7,7 +7,6 @@
 }
 
 #main_title {
-    font-family: 'Montserrat', sans-serif;
     text-align: center; 
     font-size: 6em;
     font-weight: 900;
@@ -19,18 +18,20 @@
 }
 
 .label_head {
-    font-size: 1.5em;
-    font-weight: 400;
+    font-size: 2em;
+    font-weight: 700;
     color: #fff;
+    -webkit-text-stroke: 0.3px;
+    -webkit-text-stroke-color: #000;
 }
 
 
 #button_submit {
-    font-size: 1.5em;
+    font-size: 2em;
     color: rgb(83, 83, 83);
     border-color: #ABBFCC;
     background-color: #E6E9EE;
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
