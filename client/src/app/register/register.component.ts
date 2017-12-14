@@ -72,9 +72,9 @@ export class RegisterComponent extends DialogComponent<RegisterModel, boolean> i
     this.http.post(this.registerUrl, user)
     .subscribe(data => {
       
-      if (this.isLoggedIn()) {
-        this.router.navigateByUrl(`/settings`);
-      }
+      // if (this.isLoggedIn()) {
+      //   this.router.navigateByUrl(`/settings`);
+      // }
     console.log('User logged in: ', data);
 
     });
