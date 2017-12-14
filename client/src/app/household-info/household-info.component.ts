@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LoginComponent } from '../login/login.component';
-import { DialogService } from 'ng2-bootstrap-modal';
 
 @Component({
   selector: 'app-household-info',
@@ -10,12 +8,37 @@ import { DialogService } from 'ng2-bootstrap-modal';
   styleUrls: ['./household-info.component.css'],
 })
 export class HouseholdInfoComponent implements OnInit {
-  phone: string;
   firstName: string;
   lastName: string;
   relationship: string;
-  user: string;
-  constructor() { }
+  conditions: string;
+  allergies: string;
+  medical: any = []; 
+  contactForm;
+  count: number = 0;
+  contactsUrl: any;
+  contacts: any = [];
+  contact: any;
+  contact_id: any;
+  allUserContactsUrl: string;
+  editContactUrl: string;
+  token: string = localStorage.getItem('token');
+  private headers: Headers = new Headers();
+  
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { 
+    this.createForm();
+  }
+
+  createForm() {
+    this.contactForm = this.formBuilder.group({
+      phone: '',
+      firstName: '',
+      lastName: '',
+      relationship: '',
+      image: '',
+      user: ''
+    });
+  }
 
   ngOnInit() {
   }
