@@ -27,19 +27,23 @@ nav {
 }
 
 .btn {
-	background: #FF2300;
-	color: #fff;
+	
 	/* border: 3px solid #fff; */
-	width: 450px;
-	height: 300px;
+	/* width: 450px;
+	height: 300px; */
 }
 
 .nine-one-one {
+	width: 450px;
+	height: 150px;
+	color: #fff;
+	background: #FF2300;
 	font-size: 6em;
 	font-weight: 900;
 	margin-top: 50px;
-	letter-spacing: 2px;
+	letter-spacing: 0.5px;
 	text-align: center;
+	/* padding: 50px; */
 }
 .space li { 
 	display: inline-block;
