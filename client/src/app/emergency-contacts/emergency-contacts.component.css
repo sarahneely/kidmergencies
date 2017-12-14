@@ -44,8 +44,13 @@ button.btn.btn-primary.button_margin.bold_text.btn-lg {
     border-color: #d9d9d9;
 }
 
+.col_margin_left {
+    margin-left: 50px;
+}
+
 .custom-file {
     margin-top: 60px;
+    margin-left: 20px;
 }
 
 .gray_line {
